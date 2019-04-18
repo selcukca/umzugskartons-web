@@ -1,0 +1,31 @@
+{if $holder && $holder->hasMedia()}
+
+
+    <div class="mod mod-image media">
+
+        {if $holder->data->linkto->isLink()}
+
+            {symbl_link linkto=$holder->data->linkto}
+                {symbl_image class="img-responsive" media=$holder->media size=$holder->data->extra3|default:"original"}
+            {/symbl_link}
+
+        {else}
+
+            {symbl_link media=$holder->media class="mediafile"}
+                {symbl_image class="img-responsive" media=$holder->media size=$holder->data->extra3|default:"original"}
+            {/symbl_link}
+
+        {/if}
+
+        {if $content->module->config->isField('lang[mediafile_legend]')}
+        <div class="mediainfo">
+            {if $holder->lang->mediafile_legend}
+                {$holder->lang->mediafile_legend}<br />
+            {/if}
+            {$holder->data->mediafile_copyright}
+        </div>
+        {/if}
+
+    </div>
+
+{/if}

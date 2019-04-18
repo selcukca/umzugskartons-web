@@ -1,0 +1,13 @@
+{if $content->extra1}
+    <a id="{$content->extra1}"></a>
+{/if}
+
+
+{foreach from=$content->subdata item=subcontent}
+
+    {if $subcontent->module->ident != 'bootstrap/newage/header'}
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+    {/if}
+
+{/foreach}
+

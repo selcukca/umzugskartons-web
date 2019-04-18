@@ -1,0 +1,43 @@
+{if $holder && ($holder->data->media->isFile() || $holder->lang->media->isFile())}
+
+
+<div class="media">
+
+    {if $holder->data->linkto->isLink()}
+
+        {symbl_link linkto=$holder->data->linkto}
+
+            {if $holder->lang->media->isFile()}
+                {symbl_image media=$holder->lang->media size=$holder->data->extra3|default:"original"}
+            {else}
+                {symbl_image media=$holder->data->media size=$holder->data->extra3|default:"original"}
+            {/if}
+
+        {/symbl_link}
+
+    {else}
+
+        {if $holder->lang->media->isFile()}
+            {symbl_link media=$holder->lang->media class="mediafile"}
+                {symbl_image media=$holder->lang->media size=$holder->data->extra3|default:"original"}
+            {/symbl_link}
+        {else}
+            {symbl_link media=$holder->data->media class="mediafile"}
+                {symbl_image media=$holder->data->media size=$holder->data->extra3|default:"original"}
+            {/symbl_link}
+        {/if}
+
+    {/if}
+
+    {if $content->module->config->isField('lang[mediafile_legend]')}
+    <div class="mediainfo">
+        {if $holder->lang->mediafile_legend}
+            {$holder->lang->mediafile_legend}<br />
+        {/if}
+        {$holder->data->mediafile_copyright}
+    </div>
+    {/if}
+
+</div>
+
+{/if}

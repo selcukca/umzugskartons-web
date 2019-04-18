@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "973AK4B99T.de.scalan.movingbox",
+                "paths": [ "/app/boxes/", "/app/partner-form/", "/app/partner-list/*", "/app/inventory/", "/app/checklist/", "/app/pdf-export/", "/app/settings/", "/de/partner/*", "/en/partner/*"]
+            }
+        ]
+    }
+}

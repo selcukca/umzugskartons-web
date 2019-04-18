@@ -1,0 +1,30 @@
+{if $navtable.query.pager && ( $navtable.query.entries || $form.navtable.form.entry)}
+
+
+
+    {if isset($navtable.form.entry) && isset($form.navtable.limit.entry.html)}
+
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">Entry</div>
+                {qf form=$form.navtable.limit element=entry class="form-control input-sm"}
+            </div>
+        </div>
+
+
+    {else}
+
+            <ul class="pagination pagination-sm">
+                {foreach name="entry" from=$navtable.query.entries key=_key item=_val}
+
+                <li{if $navtable.query.entry == $_key} class="active"{/if}><a title="{$_val}{if $_key != 0} {#entry_per_page#}{/if}" href="javascript:void(0);" onclick="Symbl.Navtable.setEntry('{$navtable.id}', '{$_key}');">{$_val}</a></li>
+                {/foreach}
+
+            </ul>
+
+    {/if}
+
+
+
+{/if}

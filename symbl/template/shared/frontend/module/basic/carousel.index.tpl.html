@@ -1,0 +1,33 @@
+{if $content->tb == "TB_DATA"}
+
+</div>
+
+<div class="hier {$content->extra2}">
+    <div id="owl-{$content->id}" class="owl-carousel owl-theme">
+
+        {foreach from=$content->subdata item=subcontent}
+
+            <div class="shot">
+                {symbl_module load="`$content->module->ident`/`$subcontent->module->ident`" content=$subcontent holder=$subcontent->holder parent=$content}
+            </div>
+
+        {/foreach}
+
+    </div>
+</div>
+
+<div class="container">
+
+
+{pagedata_activate group="carousel"}
+{jquery}
+    $('#owl-{$content->id}').owlCarousel({$content->extra1});
+    $('#owl-{$content->id} .fancybox').fancybox({
+        openEffect	: 'elastic',
+        closeEffect	: 'elastic',
+        title : false
+    });
+
+{/jquery}
+
+{/if}

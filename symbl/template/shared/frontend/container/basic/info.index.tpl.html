@@ -1,0 +1,7 @@
+{if $relation->content}
+
+
+    {symbl_container load="basic/module/`$relation->content->module->ident`" relation=$relation content=$relation->content holder=$relation->content->holder}
+
+
+{/if}

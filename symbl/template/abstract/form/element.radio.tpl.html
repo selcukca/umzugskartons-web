@@ -1,0 +1,15 @@
+
+<div class="radio">
+    <label>
+        {qf form=$form element=$element}
+        {if !empty($value)}
+
+            {if $value ===true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$value}
+            {/if}
+
+        {/if}
+    </label>
+</div>

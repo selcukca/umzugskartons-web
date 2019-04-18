@@ -1,0 +1,16 @@
+
+{if $holder && ($holder->data->media->isFile() || $holder->lang->media->isFile())}
+
+
+    {if $holder->lang->media->isFile()}
+        {symbl_link media=$holder->lang->media data-lightbox-gallery="appshots"}
+            {symbl_image media=$holder->lang->media size="original"}
+        {/symbl_link}
+    {else}
+        {symbl_link media=$holder->data->media data-lightbox-gallery="appshots" class="img-thumbnail" }
+            {symbl_image media=$holder->data->media size="original"}
+        {/symbl_link}
+    {/if}
+
+
+{/if}

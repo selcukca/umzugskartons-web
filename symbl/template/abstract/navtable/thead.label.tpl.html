@@ -1,0 +1,43 @@
+{assign var="order_position" value="0"}
+
+    <tr type="label">
+    {foreach from=$navtable.query.columns item=column}
+
+        {strip}
+        {if $navtable.field.$column.visible}
+
+
+            {navtable_include path=$prefix load="thead.label" file=$column}
+            <th>
+
+                {navtable_include path=$prefix load="thead.label.td" file=$column}
+
+                {if $navtable.field.$column.is_order}
+
+                    <a href="javascript:void(0);" onclick="Symbl.Navtable.setOrder('{$navtable.id}', '{$order_position}', '{$navtable.field.$column.alias}','{if (isset($navtable.field.$column.order) && ($navtable.field.$column.order == $order_position))}{if $navtable.order.$order_position.dir == "-"}+{else}-{/if}{else}+{/if}');return false;">
+                        {$column} (o)
+
+                        {if isset($navtable.field.$column.order) && ($navtable.field.$column.order == $order_position)}
+                            &nbsp;
+                            {if $navtable.order.$order_position.dir == "-"}
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            {else}
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            {/if}
+                        {/if}
+
+                    </a>
+                {else}
+                    {$column} (n)
+                {/if}
+                {/navtable_include}
+            </th>
+            {/navtable_include}
+
+
+        {/if}
+        {/strip}
+
+    {/foreach}
+
+    </tr>

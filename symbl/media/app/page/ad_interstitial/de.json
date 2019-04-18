@@ -1,0 +1,88 @@
+{
+    "content": [
+        {
+            "module": "ionic/ion-card",
+            "holder": {
+                "data": {
+                    "fk_link": "-1",
+                    "link": "https://www.amazon.de/10-Umzugskartons-KARTONARA-Box-Ergonomie/dp/B07FXYKXJK",
+                    "extra3": "original"
+                },
+                "lang": {
+                    "title": "Die Kartonara Box",
+                    "link_title": "Jetzt kaufen bei Amazon!",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": [
+                {
+                    "module": "basic/imagetext",
+                    "holder": {
+                        "data": {
+                            "fk_link": "-1",
+                            "link": "https://www.amazon.de/10-Umzugskartons-KARTONARA-Box-Ergonomie/dp/B07FXYKXJK",
+                            "mediafile_title": "Umzugskarton_1WkxJsreEqYMsm_600x600.jpg",
+                            "mediafile_type": "image/jpeg",
+                            "extra1": "left",
+                            "extra3": "original",
+                            "media": "media/structure/000050/Umzugskarton_1WkxJsreEqYMsm_600x600.jpg"
+                        },
+                        "lang": {
+                            "content": "<h2>Die Kartonara-Box</h2>\r\n\r\n<p>Hier ein paar Infos</p>",
+                            "is_translated": "1",
+                            "is_active": "1"
+                        }
+                    },
+                    "subdata": []
+                }
+            ]
+        },
+        {
+            "module": "ionic/ion-card",
+            "holder": {
+                "data": {
+                    "fk_link": "-1",
+                    "link": "https://www.amazon.de/Umzugskartons-2-welliger-Umzugskarton-F\u00fcllvolumen-ergonomischen/dp/B07MKHGZV2/",
+                    "extra3": "original"
+                },
+                "lang": {
+                    "title": "Kartonara Box II",
+                    "link_title": "Jetzt kaufen bei Amazon!",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": [
+                {
+                    "module": "basic/imagetext",
+                    "holder": {
+                        "data": {
+                            "fk_link": "-1",
+                            "link": "https://www.amazon.de/Umzugskartons-2-welliger-Umzugskarton-F%C3%BCllvolumen-ergonomischen/dp/B07MKHGZV2/",
+                            "mediafile": "structure/000050/kartonara-box-2.jpg",
+                            "mediafile_title": "kartonara-box-2.jpg",
+                            "mediafile_type": "image/jpeg",
+                            "extra1": "left",
+                            "extra3": "original"
+                        },
+                        "lang": {
+                            "content": "<h2>Die Kartonara-Box II</h2>\r\n\r\n<p>Hier ein paar Infos</p>",
+                            "is_translated": "1",
+                            "is_active": "1"
+                        }
+                    },
+                    "subdata": []
+                }
+            ]
+        }
+    ],
+    "filelist": [
+        {
+            "url": "http://www.umzugskartons-app.de/symbl/media/structure/000050/Umzugskarton_1WkxJsreEqYMsm_600x600.jpg",
+            "local": "media/structure/000050/Umzugskarton_1WkxJsreEqYMsm_600x600.jpg",
+            "size": 60377,
+            "hash": "5a12f4d368f3f96e0c4fe6ba6baab055"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "de.scalan.movingbox",
+               "sha256_cert_fingerprints": ["C4:85:CE:16:81:38:53:FA:FB:56:3A:4D:54:14:17:DD:DD:14:E7:3E:4B:F4:EA:9F:35:C3:AB:30:1C:7B:19:5E"] }
+}]

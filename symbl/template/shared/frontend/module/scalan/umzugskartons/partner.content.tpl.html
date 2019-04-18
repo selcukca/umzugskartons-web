@@ -1,0 +1,32 @@
+<section >
+    <div class="container">
+
+        <h3>{$I18N["company.section.address"]}</h3>
+        {if $oPartner->street}{$oPartner->street}<br />{/if}
+        {$oPartner->zip} {$oPartner->city}, {$oPartner->country->title}<br />
+
+
+        <h3 class="pt-5">{$I18N["company.section.contact"]}</h3>
+        {if $oPartner->email}{$oPartner->email}<br />{/if}
+        {if $oPartner->phone}{$oPartner->phone}<br />{/if}
+
+
+        <h3 class="pt-5">{$I18N["company.benefits"]}</h3>
+        {$oPartner->benefits}
+    </div>
+</section>
+
+<section class="bg-primary text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+
+                <h2 class="section-heading">{$I18N["app.installed.headline1"]}</h2>
+                <h4 class="mb-4">{$I18N["app.installed.headline2"]}</h4>
+                <a href="{$HTTP_HOST}{$WWW_SCRIPT_DIR}{$WWW_ARGV}" class="btn btn-secondary">{$I18N["app.installed.button"]}</a>
+            </div>
+
+
+        </div>
+    </div>
+</section>

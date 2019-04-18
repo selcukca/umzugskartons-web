@@ -1,0 +1,45 @@
+{symbl_screen load="scalan/umzugskartons/profile"}
+
+
+{*$USER->relocation->setPlainValue("fk_status", 1)*}
+{*$USER->setPlainValue("fk_status", 1)*}
+
+{if ($USER->fk_status != $STATUS_ONLINE) || ($USER->relocation->fk_status != $STATUS_ONLINE)}
+
+
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        {if $USER->fk_status != $STATUS_ONLINE}
+            <div class="pb-3">
+                {$I18N["user.status"]} <strong>{$I18N->getStatus($USER->fk_status, "user.")}</strong><br />
+                {$I18N->getStatus($USER->relocation->fk_status, "user.desc.")}
+            </div>
+        {/if}
+
+        {if $USER->relocation->fk_status != $STATUS_ONLINE}
+            <div>
+                {$I18N["company.status"]} <strong>{$I18N->getStatus($USER->relocation->fk_status, "company.")}</strong><br />
+                {$I18N->getStatus($USER->relocation->fk_status, "company.message.")}
+            </div>
+        {/if}
+
+    </div>
+
+{/if}
+
+
+
+
+
+
+
+{if isset($smarty.get.saved)}
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        {$I18N["partner.profile.message.saved"]}
+
+    </div>
+
+{/if}

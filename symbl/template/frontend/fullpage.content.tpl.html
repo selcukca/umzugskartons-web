@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+    {symbl_module load="breadcrumb"}
+
+    {foreach from=$PAGE.module item=content}
+
+        {symbl_module load=$content->module->ident content=$content holder=$content->holder}
+
+    {/foreach}
+
+</div>
+
+

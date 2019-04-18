@@ -1,0 +1,45 @@
+
+<!-- The fileinput-button span is used to style the file input field as button -->
+<span class="btn btn-success fileinput-button">
+    <i class="glyphicon glyphicon-plus"></i>
+    <span>{$I18N->btn_select_files}</span>
+    <!-- The file input field used as target for the file upload widget -->
+    <input id="fileupload-{$content->id}" type="file" name="files[]" multiple>
+</span>
+<br>
+<br>
+<!-- The global progress bar -->
+<div id="progress" class="progress">
+    <div class="progress-bar progress-bar-success"></div>
+</div>
+
+<!-- The container for the uploaded files -->
+<div id="files" class="files"></div>
+
+
+
+{pagedata_javascript dir="`$WWW_PROJECT_JS_DIR`jquery/fileupload/" load=['jquery.iframe-transport.js','jquery.fileupload.js', 'jquery.fileupload-process.js']}
+{pagedata type="jquery"}
+
+    $('#fileupload-{$content->id}').fileupload({
+        url         : '{$WWW_PROJECT_HOME_DIR}upload/{$content->subdata->getUuid()}/',
+        maxChunkSize: 1 * 1000 * 1000, // 1 MB
+        dataType    : 'json',
+        stop        : function()
+        {
+            document.location.href = '{$WWW_SCRIPT_DIR}{$WWW_ARGV|format_query}path={$content->subdata->getPath()}';
+        },
+        done        : function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+            });
+        },
+        progressall : function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css('width', progress + '%');
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+
+{/pagedata}

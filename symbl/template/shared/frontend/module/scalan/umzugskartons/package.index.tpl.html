@@ -1,0 +1,14 @@
+{symbl_module load="scalan/umzugskartons/package" file=header}
+
+
+<a id="features"></a>
+{foreach from=$content->getModuleList($oPackage->data->id) item=subcontent}
+
+    {if ($subcontent->module->ident == "basic/page/display") && ($subcontent->extra2 == 12)}
+        {symbl_module load="scalan/umzugskartons/package" file=basket}
+    {/if}
+    {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+
+{/foreach}
+
+

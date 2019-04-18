@@ -1,0 +1,22 @@
+{symbl_php_module load=$content->module->ident screen=true}
+
+
+    <div id="user-confirmation">
+
+
+        {if (isset($smarty.get.saved)) && ($smarty.get.saved == $content->id)}
+
+            {$I18N.msg_success|nl2br}
+
+        {else}
+
+            {symbl_module load=$content->module->ident file="form"}
+
+
+        {/if}
+
+    </div>
+
+
+{/symbl_php_module}
+

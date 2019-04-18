@@ -1,0 +1,14 @@
+<ul class="breadcrumb">
+    <li><a href="?path=/">root</a></li>
+
+    {foreach name="breadcrumb" from=$content->subdata->breadcrumb item=entry}
+
+        {if $smarty.foreach.breadcrumb.last}
+            <li class="active">{$entry.title}</li>
+        {else}
+            <li><a href="?path={$entry.url}">{$entry.title}</a></li>
+        {/if}
+
+
+    {/foreach}
+</ul>

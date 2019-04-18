@@ -1,0 +1,13 @@
+
+{if isset($navtable.form.filter) && ($navtable.form.filter|@count > 0)}
+
+<div class="btn-group">
+    {if $navtable.query.is_filtered}
+        <button class="btn  btn-danger" onclick="Symbl.Navtable.clearFilter('{$navtable.id}');return false;"><span class="glyphicon glyphicon-filter"></span></button>
+    {else}
+        {if !$show_filter}
+            <button class="btn btn-info" onclick="Symbl.Navtable.toggle('{$navtable.id}', 'filter');return false;"><span class="glyphicon glyphicon-filter"></span></button>
+        {/if}
+    {/if}
+</div>
+{/if}

@@ -1,0 +1,11 @@
+<div class="col-md-{$content->extra1} {$content->extra2}">
+
+
+    {foreach from=$content->subdata item=subcontent}
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder}
+
+
+    {/foreach}
+
+</div>

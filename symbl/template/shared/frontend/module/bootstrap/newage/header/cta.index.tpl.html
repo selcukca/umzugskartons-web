@@ -1,0 +1,16 @@
+{if $holder && $holder->lang->is_active && $holder->lang->title}
+
+    <div class="header-content mx-auto">
+        <h1 class="mb-3">
+            {$holder->lang->title}
+        </h1>
+        {if $holder->lang->teaser}
+            <h5 class="mb-4">{$holder->lang->teaser}</h5>
+        {/if}
+
+
+        {symbl_link linkto=$holder->data->linkto class="btn btn-outline btn-xl{if $holder->data->linkto->isAnchor()} js-scroll-trigger{/if}"}
+            {$holder->lang->link_title}
+        {/symbl_link}
+    </div>
+{/if}

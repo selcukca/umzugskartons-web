@@ -1,0 +1,48 @@
+
+
+
+{symbl_php_module load=$content->module->ident screen=['form/abstract', 'scalan/umzugskartons/profile']}
+
+
+
+    <div id="pwdchange">
+
+        {if (isset($smarty.get.saved)) && ($smarty.get.saved == $content->id)}
+
+            {*** or redirect to another page ***}
+            {$I18N["form.pwd-change.msg.success"]|nl2br}
+
+
+
+
+
+            <br />
+            <br />
+            {if $redirect = $STRUCTURE["LOGIN"]}
+                {$seconds = 20}
+                {symbl_redirect structure=$redirect type="meta" seconds=$seconds}
+                {capture name="link"}{symbl_link linkto=$redirect->linkto}{$redirect->lang->title}{/symbl_link}{/capture}
+                {$I18N["redirect.message"]|replace:["#seconds#", "#link#"]:[$seconds, $smarty.capture.link]}
+            {/if}
+
+
+
+
+        {else}
+
+            {if $USER->id > 0}
+                {symbl_module load=$content->module->ident file="form"}
+            {else}
+                {symbl_module load=$content->module->ident file="error"}
+            {/if}
+
+        {/if}
+
+    </div>
+
+
+{/symbl_php_module}
+
+
+
+

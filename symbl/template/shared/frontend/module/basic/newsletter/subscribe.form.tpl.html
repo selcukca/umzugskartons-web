@@ -1,0 +1,15 @@
+
+
+<form{$form.attributes}>
+    {$form.hidden}
+
+    {symbl_element form=$form element=lastname     label=$I18N->lb_lastname}
+    {symbl_element form=$form element=firstname    label=$I18N->lb_firstname}
+    {symbl_element form=$form element=company      label=$I18N->lb_company}
+    {symbl_element form=$form element=email        label=$I18N->lb_email}
+
+
+    {qf form=$form element=btn_submit class="btn btn-primary" value=$I18N->btn_submit}
+
+</form>
+

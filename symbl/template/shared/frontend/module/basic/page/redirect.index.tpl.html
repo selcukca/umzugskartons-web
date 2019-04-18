@@ -1,0 +1,6 @@
+
+{if isset($STRUCTURE[$content->extra1])}
+
+    {symbl_redirect linkto=$STRUCTURE[$content->extra1]->linkto type=$content->extra2|default:"meta" seconds=$content->extra3|default:10}
+
+{/if}

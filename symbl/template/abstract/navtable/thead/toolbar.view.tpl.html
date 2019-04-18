@@ -1,0 +1,49 @@
+<div class="btn-group">
+
+    <button class="btn btn-primary" onclick="Symbl.Navtable.submit('{$navtable.id}');return false;">Aktualisieren</button>
+
+    {if ($navtable.jsdata.visibility || $navtable.jsdata.fieldscore)}
+
+    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+
+
+    <ul name="fieldscore" class="dropdown-menu">
+    {foreach from=$navtable.query.columns item=column}
+
+        <li name="{$navtable.field.$column.alias}" id="{$navtable.field.$column.alias}" class="ui-state-default{if $navtable.field.$column.visibility && $form.navtable.visibility.$column} ui-state-disabled{/if}">
+
+            <a href="javascript:void(0);" onclick="Symbl.Navtable.setVisibility('{$navtable.id}', '{$column}');">
+
+
+                {if $navtable.jsdata.fieldscore}
+                    <span class="pull-right glyphicon glyphicon-resize-vertical"></span>
+                {/if}
+
+
+                {if $navtable.field.$column.visibility}
+
+                        <label for="qf-visible-{$column}">
+                            {qf form=$form.navtable.visibility element=$column id="qf-visible-`$column`"}
+                            {$navtable.field.$column.label|default:"&nbsp;"}
+                        </label>
+                {else}
+
+                    {$navtable.field.$column.label|default:"&nbsp;"}
+
+                {/if}
+
+
+
+            </a>
+
+
+
+        </li>
+
+    {/foreach}
+
+    </ul>
+
+    {/if}
+
+</div>

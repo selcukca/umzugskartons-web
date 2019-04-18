@@ -1,0 +1,193 @@
+{
+    "content": [
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> We collect, store and use your personal data in accordance with the provisions of the Data Protection Act, in particular the Federal Data Protection Act (BDSG) and the Telemedia Act (TMG). In this statement we would like to inform you about the types of data we process for which purposes and which rights you are entitled to. </ P>\n\n<p> If there is the possibility of entering personal data on our website, we draw your attention to the fact that only the specially marked mandatory fields for processing the respective request or your order are required. All other details of data are voluntary and will be used by us to optimize our offer and, if necessary, for statistical purposes. </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a71 Anonymized data collection and processing on this website",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> In our server, log file data is automatically collected and stored in an internal log file, which is transmitted to us via your browser. These are the following data: </p>\n\n<ul>\n<li> Type and version of the browser you are using, </li>\n<li> Type and version of the operating system you are using, </li>\n<li> URL of the page where you came to us, </li>\n<li> Keywords you used to find our site </li>\n<li> Date and time of retrieval of our website, </li>\n<li> Names of subpages you have retrieved. </li>\n</ul>\n\n<p> We collect and process this data in an anonymous form, which means that it can not be assigned to a specific person. The purpose of the data collection and processing is the evaluation for internal system-related and statistical purposes. </p>\n\n<p> </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a72 Use of your data",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> We use your e-mail address to complete a registration process on our pages via a confirmation e-mail and to send you confirmation e-mails about the orders you have placed. </p>\n\n<p> For the transmission of our newsletter or other offers that are of interest to you, we only use your e-mail address if you have given us your consent. You have the opportunity to revoke your consent at any time and stop receiving newsletters and e-mails from our company. For more information on the exercise of your right of objection, see the point \"Right of objection and revocation.\" </p>\n\n<p> We make sure that our offer is tailored to your needs in the best possible way. In this regard, we would like to point out that we </p>\n\n<ul>\n<li> Conduct surveys of our registered customers as we are always interested in your opinion about our product and service offer </li>\n</ul>\n\n<p> You may object to the appropriate use of your data at any time by sending a brief text message to the addresses below. </p>\n\n<p> Customer data will not be passed on to unauthorized third parties. </p>\n\n<p> </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a73 Cookies",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> We use so-called \"cookies\" for our websites. Cookies are small text files that are stored on your computer and stored by your browser. By setting cookies, our web server can recognize your browser, your individual settings in our web pages and, if applicable, parts of the log-in data in encrypted form, thus making it easier for you to use our pages and enabling automatic log-on. </p>\n\n<p> Your browser settings allow you to refuse cookies, delete cookies from your computer, block cookies or request them before setting a cookie. The cookies we set will be deleted from your computer after each session. </p>\n\n<p> </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a74 Right to information, correction, blocking and deletion of data",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> On request, we will provide you with information about your personal data, its origin, the recipients and the purpose of the storage free of charge at any time. The information can be obtained under the contact details below. </ P>\n\n<p> If you meet the legal requirements, you have the right to correct, block or delete this data. Please also contact the contact address below. </ P>\n\n<p> </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a75 Right of objection and cancellation",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>You have the right to object to the use of your data for the creation of user profiles and to revoke any consent granted to us. In this case, we will refrain from processing your data for these purposes. You can inform us of the objection or cancellation by mail, fax or e-mail without giving reasons.</p>\n\n<address>SCALAN Internet solutions<br />\nAuf dem Rott 36<br />\n41564 Kaarst\nGermany</address>\n\n<address>info@umzugskartons-app.de</address>\n\n<p>\u00a0</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a76 Consent",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p> If you have consented to the use of your e-mail address for the receipt of our newsletter and the sending of offers, you have given us the following consent. We have logged your consent. </ P>\n\n<p> Consent to use my e-mail address to receive newsletters and offers. </p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        }
+    ],
+    "filelist": []
+}

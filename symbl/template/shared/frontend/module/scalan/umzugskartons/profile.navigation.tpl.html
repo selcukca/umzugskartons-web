@@ -1,0 +1,38 @@
+<!-- Nav tabs -->
+<ul class="nav nav-pills">
+{foreach from=$STRUCTURE[27]->childs->getVisibles() item=oStructure}
+    <li class="nav-item">
+
+        {symbl_link linkto=$oStructure->linkto class="nav-link{if ($oStructure->isRoute($ROUTE) || $oStructure->isInRouteWay($ROUTE))} active{/if}"}
+            {$oStructure->lang->shorttitle|default:$oStructure->lang->title}
+        {/symbl_link}
+
+    </li>
+{/foreach}
+</ul>
+
+<br />
+<br />
+{symbl_screen load="scalan/umzugskartons/profile"}
+
+{if $USER->relocation->fk_status != $STATUS_ONLINE}
+
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        Ihr Unternehmen: <strong>{$I18N->getStatus($USER->relocation->fk_status, "[relocation]")}</strong><br />
+        {$I18N->getStatus($USER->relocation->fk_status, "[relocation][desc]")}
+    </div>
+
+{/if}
+
+{if $USER->fk_status != $STATUS_ONLINE}
+
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        Ihr Benutzerzugang: <strong>{$I18N->getStatus($USER->fk_status, "[user]")}</strong><br />
+        {$I18N->getStatus($USER->relocation->fk_status, "[user][desc]")}
+    </div>
+
+{/if}

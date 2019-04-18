@@ -1,0 +1,46 @@
+
+
+{symbl_php_module load="basic/comment" screen=true}
+    <h3>{$I18N->comments} <small>({$table->comments->count()})</small></h3>
+    <div class="well">
+        <form{$form.attributes}>
+
+            {$form.hidden}
+
+            {symbl_element form=$form element=fullname label=$I18N->lb_fullname}
+            {symbl_element form=$form element=email    label=$I18N->lb_email}
+            {symbl_element form=$form element=content  label=$I18N->lb_content}
+
+            {qf form=$form element=btn_submit class="btn btn-primary" value=$I18N->btn_submit}
+
+
+        </form>
+
+    </div>
+
+{/symbl_php_module}
+
+
+
+<hr />
+
+{foreach from=$table->comments item=oComment}
+
+    <div class="media">
+        <a href="#" class="pull-left">
+            <img alt="" src="http://placehold.it/64x64" class="media-object">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">
+                {$oComment->fullname}
+                <small>{$oComment->created}</small>
+            </h4>
+            {$oComment->content}
+        </div>
+    </div>
+
+
+{/foreach}
+
+
+

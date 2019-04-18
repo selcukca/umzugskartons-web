@@ -1,0 +1,45 @@
+
+<tbody>
+{foreach name="rows" from=$data key=index item=row}
+
+    <tr>
+
+    {foreach from=$navtable.query.columns item=column}
+
+        {strip}
+        {if $navtable.field.$column.visible}
+
+            {navtable_include path=$prefix load="tbody" file=$column}
+
+
+                <td>
+                {navtable_include path=$prefix load="tbody.td" file=$column}
+
+                    {$row.$column|default:"&nbsp;"}
+
+                {/navtable_include}
+                </td>
+
+
+            {/navtable_include}
+
+
+
+        {/if}
+        {/strip}
+
+    {/foreach}
+
+    </tr>
+
+
+{foreachelse}
+
+    <tr>
+        <td colspan="{$navtable.query.columns|@count}">nodata</td>
+    </tr>
+
+{/foreach}
+
+
+</tbody>

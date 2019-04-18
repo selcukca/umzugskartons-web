@@ -1,0 +1,2 @@
+;(function($,window,document,undefined){var handleDropdown=function(){if($(window).width()>=768){$('.dropdown-toggle').addClass("disabled");}else{$('.dropdown-toggle').removeClass("disabled");}}
+$(window).resize(handleDropdown);handleDropdown();$(document).on('change','.has-error input,select,textarea',function(e){$(this).parents('.has-error').eq(0).removeClass('has-error').find('.help-block.error').remove();});}(jQuery,window,document));

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{$PAGE.title}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="shortcut icon" href="{$WWW_HOME_DIR}favicon.ico" />
+
+        <!-- meta -->
+        {foreach from=$PAGE.meta->getAll() item=item}
+
+        <meta {$item.type}="{$item.key}" content="{$item.value}">
+        {/foreach}
+
+        <!-- css -->
+        {foreach from=$PAGE.css->getFiles() item=file}
+
+        <link href="{$file->setLoaded()}" type="text/css" rel="stylesheet" />
+        {/foreach}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+
+    <body id="page-top" class="{if $ROUTE}{$ROUTE->datatype->data->ident} page-{$ROUTE->getId()}{/if}{if $URL_VIEW_VALUE} popup{/if}{if isset($PAGE.carousel)} carousel{/if}{if $URL_TK_VALUE} tk{/if}" data-spy="scroll" data-target=".navbar-custom" {if isset($PAGE.background) && $PAGE.background->isFile()} style="background: url({$PAGE.background->getThumbUrl()|replace:"#param#":"original"}) repeat fixed center top #000;"{/if}>
+
+
+        {if $URL_VIEW_VALUE == 0}
+            {symbl_include load="frontend" file="standard"}
+        {else}
+            {symbl_include load="frontend" file="popup"}
+        {/if}
+
+
+        <!-- scripts -->
+
+        {foreach from=$PAGE.javascript->getFiles() item=file}
+
+        <script language="JavaScript" type="text/javascript" src="{$file}"></script>
+        {/foreach}
+
+
+        <script language="JavaScript" type="text/javascript">
+        // <![CDATA[
+
+            Symbl.init('{$WWW_HOME_DIR}', '{$WWW_PROJECT_HOME_DIR|replace:$WWW_HOME_DIR:""}', '{$WWW_SCRIPT_DIR}', '{$smarty.const.REAL_PROJECT_NAME}', '{$GET_QUERY}');
+
+            $(document).ready(function() {ldelim}
+
+                $.selectbox.init($('body'));
+
+                {if ($PAGE.jquery->count() > 0)}
+                {foreach from=$PAGE.jquery item=js}
+
+{$js|indent:16}
+                {/foreach}
+                {/if}
+
+
+            {rdelim});
+        // ]]>
+        </script>
+
+
+    </body>
+</html>

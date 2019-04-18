@@ -1,0 +1,87 @@
+{
+    "content": [
+        {
+            "module": "ionic/ion-card",
+            "holder": {
+                "data": {
+                    "extra3": "original",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00dcberschrift",
+                    "is_active": "1"
+                }
+            },
+            "subdata": [
+                {
+                    "module": "ionic/ion-list",
+                    "holder": [],
+                    "subdata": [
+                        {
+                            "module": "ionic/ion-item",
+                            "holder": {
+                                "data": {
+                                    "extra3": "original",
+                                    "link": false
+                                },
+                                "lang": {
+                                    "content": "<p>sfgdfgsdfg</p>",
+                                    "is_active": "1"
+                                }
+                            },
+                            "subdata": []
+                        },
+                        {
+                            "module": "ionic/ion-item",
+                            "holder": {
+                                "data": {
+                                    "extra3": "original",
+                                    "link": false
+                                },
+                                "lang": {
+                                    "content": "<p>asdfasdfsadf</p>",
+                                    "is_active": "1"
+                                }
+                            },
+                            "subdata": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "module": "ionic/ion-card",
+            "holder": {
+                "data": {
+                    "extra3": "original",
+                    "link": false
+                },
+                "lang": {
+                    "is_active": "1"
+                }
+            },
+            "subdata": [
+                {
+                    "module": "ionic/local-video",
+                    "holder": {
+                        "data": {
+                            "mediafile": "structure/000049/Umzugskarton-KARTONARA-Box.mp4",
+                            "mediafile_title": "Umzugskarton-KARTONARA-Box.mp4",
+                            "mediafile_type": "video/mp4",
+                            "iconfile": "structure/000049/Umzugskarton-KARTONARA-Box.jpg",
+                            "iconfile_title": "Umzugskarton-KARTONARA-Box.jpg",
+                            "iconfile_type": "image/jpeg",
+                            "extra1": "a:6:{s:8:\"controls\";s:0:\"\";s:9:\"autostart\";s:0:\"\";s:4:\"loop\";s:0:\"\";s:5:\"muted\";s:0:\"\";s:5:\"width\";s:0:\"\";s:6:\"height\";s:0:\"\";}",
+                            "link": false
+                        },
+                        "lang": {
+                            "is_active": "1"
+                        }
+                    },
+                    "subdata": []
+                }
+            ]
+        }
+    ],
+    "filelist": []
+}

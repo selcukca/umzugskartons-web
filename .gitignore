@@ -1,0 +1,5 @@
+/node_modules
+/bower_components
+/symbl/class
+/symbl/prepend/shared
+/media/*

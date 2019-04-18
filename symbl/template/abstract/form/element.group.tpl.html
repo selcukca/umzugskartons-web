@@ -1,0 +1,13 @@
+<div class="form-group{if isset($form.errors.$element)} has-error{/if}">
+
+    {if !empty($label)}<label>{$label}</label>{/if}
+
+    {foreach from=$form.$element key=key item=item}
+        {symbl_element form=$form.$element element=$key}
+    {/foreach}
+
+    {if isset($form.errors.$element)}
+        <span class="help-block error">{$config[$form.errors.$element]}</span>
+    {/if}
+
+</div>

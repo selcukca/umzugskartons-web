@@ -1,0 +1,30 @@
+{if $holder}
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+
+            <div>
+                {if $holder->data->linkto->isLink()}
+
+                    {symbl_link linkto=$holder->data->linkto}
+                        {symbl_image class="center-block img-responsive" media=$holder->media size=$holder->data->extra3|default:"small"}
+                    {/symbl_link}
+
+                {else}
+
+                    {symbl_link media=$holder->media class="mediafile"}
+                        {symbl_image class="center-block img-responsive" media=$holder->media size=$holder->data->extra3|default:"small"}
+                    {/symbl_link}
+
+                {/if}
+            </div>
+            <div class="center-block">
+                {$holder->lang->content}
+            </div>
+
+        </div>
+
+
+    </div>
+{/if}
+

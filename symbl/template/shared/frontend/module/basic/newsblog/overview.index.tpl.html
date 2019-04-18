@@ -1,0 +1,41 @@
+{symbl_screen load=$content->module->ident}
+{if $content->subdata && $content->subdata->load($URL_PAGE_VALUE)}
+
+    <div class="row">
+
+        <div class="col-lg-8">
+
+
+
+            {foreach from=$content->subdata item=oNews}
+
+                <!-- blog entry -->
+                <h1>{symbl_link linkto=$oNews->data->linkto show=true}{$oNews->data->title}{/symbl_link}</h1>
+
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {$oNews->data->created}</p>
+                <hr>
+
+                {symbl_link linkto=$oNews->data->linkto show=true}
+                    {symbl_image media=$oNews->data->media size="800x0x0" class="img-responsive"}
+                {/symbl_link}
+
+
+                <hr>
+                {$oNews->data->content}
+
+                    {if $oNews->data->linkto->isLink()}
+                        {symbl_link linkto=$oNews->data->linkto} ... {$I18N->lb_more} <span class="glyphicon glyphicon-chevron-right"></span>{/symbl_link}
+                    {/if}
+
+                <hr />
+
+
+            {/foreach}
+
+
+        </div>
+    </div>
+
+    {symbl_module load=$content->module->ident file="pager" pager=$content->subdata->pager}
+
+{/if}

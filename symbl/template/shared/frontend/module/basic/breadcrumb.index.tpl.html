@@ -1,0 +1,16 @@
+
+{if $content->tb == "TB_DATA"}
+{if $ROUTE->datatype->data->ident != "startpage"}
+<ol class="breadcrumb">
+
+
+    <li class="breadcrumb-item">
+        {symbl_link linkto=$STRUCTURE[4]->linkto}{$STRUCTURE[4]->lang->title}{/symbl_link}
+    </li>
+    {foreach from=$ROUTE->parents item=oParent}
+        <li class="breadcrumb-item">{symbl_link linkto=$oParent->linkto}{$oParent->lang->title}{/symbl_link}</li>
+    {/foreach}
+    <li class="breadcrumb-item active">{$ROUTE->lang->title}</li>
+</ol>
+{/if}
+{/if}

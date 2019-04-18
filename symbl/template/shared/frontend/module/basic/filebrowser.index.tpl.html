@@ -1,0 +1,86 @@
+
+{symbl_screen load=$content->module->ident}
+
+{pagedata_javascript dir="`$WWW_PROJECT_JS_DIR`jquery/" load=['jquery.tablesorter.min.js'] minify=false}
+{pagedata type="jquery"}
+    Symbl.Frontend.Module.Filebrowser.Init({$content->id});
+{/pagedata}
+
+
+{if $content->subdata->init()}
+
+
+    {if $content->subdata->isRecursive()}
+
+        {symbl_module load=$content->module->ident file="breadcrumb"}
+
+    {/if}
+
+
+    <table id="browser-{$content->id}" class="table table-bordered table-hover table-condensed tablesorter">
+
+        <thead>
+            <tr>
+                <th width="50">&nbsp;</th>
+                <th>{$I18N->lb_file}</th>
+                <th width="100">{#lb_size#}{$I18N->lb_size}</th>
+                {if $content->subdata->isDeletable()}<th width="140">&nbsp;</th>{/if}
+            </tr>
+        </thead>
+        <tbody>
+        {foreach from=$content->subdata key=hash item=entry}
+        <tr>
+
+            <td>
+                <span class="hide">{if $entry.isdir}1{else}0{/if}</span>
+                {if $entry.isdir}
+                    <img src="{$WWW_IMAGE_DIR}shared/icon/browser/folder.gif" />
+                {else}
+                    {if false && $entry.mediafile->isImage()}
+                        <img src="{$entry.mediafile->getThumbUrl()}&amp;wh=20" />
+                    {else}
+                        <img src="{$entry.mediafile->getSrc(true)}" />
+                    {/if}
+                {/if}
+            </td>
+
+            <td>
+                <span class="hide">{$entry.filename}</span>
+                {if $entry.isdir}
+                    <a href="?path={$entry.path|rawurlencode}{$entry.filename|format_dir|rawurlencode}">{$entry.filename}</a>
+                {else}
+                    <a target="_blank" href="{$WWW_HOME_DIR}download/hash/{$hash}">{$entry.filename}</a>
+                {/if}
+
+            </td>
+
+            <td>
+                {if $entry.isdir}
+                    -
+                {else}
+                    <span class="hide">{$entry.size}</span>{$entry.size|filesize}
+                {/if}
+            </td>
+
+            {if $content->subdata->isDeletable()}
+            <td>
+                <a onclick="return confirm('{$I18N->btn_delete_confirmation}');" href="?path={$entry.path|rawurlencode}&amp;delete={$hash}">
+                    {$I18N->btn_delete}
+                </a>
+            </td>
+            {/if}
+
+
+        </tr>
+
+        {/foreach}
+        </tbody>
+    </table>
+
+
+
+    {if $content->subdata->isUploadable()}
+        {symbl_module load=$content->module->ident file="upload"}
+    {/if}
+
+{/if}

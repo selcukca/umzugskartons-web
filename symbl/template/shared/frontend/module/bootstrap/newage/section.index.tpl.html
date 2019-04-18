@@ -1,0 +1,17 @@
+<section{if $_id = $content->getConfig()->getId()} id="{$_id}"{/if} class="{$content->getConfig()->getClass()}">
+
+    {if $content->getConfig()->hasContainer()}
+        <div class="container">
+    {/if}
+
+    {foreach from=$content->subdata item=subcontent}
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+
+    {/foreach}
+
+    {if $content->getConfig()->hasContainer()}
+        </div>
+    {/if}
+
+</section>

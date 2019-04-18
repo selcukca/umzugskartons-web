@@ -1,0 +1,48 @@
+
+{if !$BASKET.PACKAGE}
+
+    {$I18N["basket.msg.empty"]}
+
+{else if $USER->relocation->country->fk_status != $STATUS_ONLINE}
+
+    {$I18N["basket.msg.country_not_implemented"]}
+
+{elseif $USER->relocation->id == 0}
+
+    {symbl_screen load="scalan/umzugskartons/order"}
+    <div class="row">
+        <div class="col-md-5">
+
+            <h3 class="page-header">{$I18N["order.section.login"]}</h3>
+            <br />
+            {symbl_module load="basic/login"}
+
+        </div>
+        <div class="col-md-5 offset-md-2">
+
+            <h3 class="page-header">{$I18N["order.section.registration"]}</h3>
+            <br />
+            {symbl_module load="scalan/umzugskartons/registration" file="short"}
+
+        </div>
+    </div>
+
+
+{else}
+
+    {symbl_php_module load=$content->module->ident screen=[$content->module->ident, "form/abstract", "scalan/umzugskartons/basket", "scalan/umzugskartons/profile", "scalan/umzugskartons/registration"]}
+
+        {if isset($klarna)}
+            {$klarna.html_snippet}
+        {else}
+        -
+        {/if}
+
+
+    {/symbl_php_module}
+
+
+
+
+{/if}
+

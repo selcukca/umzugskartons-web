@@ -1,0 +1,22 @@
+{if $pager.pages|@count > 1}
+
+
+    <ul class="pager">
+
+        {if $pager.current < $pager.lastpage}
+        <li class="previous">
+            <a href="?{$URL_PAGE}={$pager.current+1}">&larr; {$I18N->btn_prev}</a>
+        </li>
+        {/if}
+
+        {if $pager.current > 1}
+        <li class="next">
+            <a href="?{$URL_PAGE}={$pager.current-1}">{$I18N->btn_next} &rarr;</a>
+        </li>
+        {/if}
+    </ul>
+
+{/if}
+
+
+

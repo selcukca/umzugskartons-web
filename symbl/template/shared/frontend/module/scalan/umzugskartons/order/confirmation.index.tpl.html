@@ -1,0 +1,13 @@
+{if $content->tb == "TB_DATA"}
+{symbl_php_module load=$content->module->ident screen=[$content->module->ident, "scalan/umzugskartons/profile", "form/abstract"] create=true}
+
+    {if isset($klarna)}
+        {$klarna.html_snippet}
+    {else}
+        not
+    {/if}
+
+{/symbl_php_module}
+{/if}
+
+

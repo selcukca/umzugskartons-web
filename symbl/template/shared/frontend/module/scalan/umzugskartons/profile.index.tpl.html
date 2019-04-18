@@ -1,0 +1,159 @@
+{if $content->tb == "TB_DATA"}
+
+{symbl_php_module load=$content->module->ident screen=[$content->module->ident, "form/abstract"]}
+
+    {symbl_module load="scalan/umzugskartons/profile" file="navigation"}
+
+     <form{$form.attributes}>
+            {$form.hidden}
+
+            {if $form.errors || $form.error}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  {$I18N->f_error}
+                  {if $form.error}
+                    <br />
+                    <br />
+                    <div>{$form.error}</div>
+                  {/if}
+                </div>
+            {/if}
+
+            <h3 class="page-header">{$I18N["section[company]"]}</h3>
+            {symbl_element form=$form.company element=title label=true}
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    {symbl_element form=$form.company element=email label=true}
+                </div>
+                <div class="col-md-6">
+                    {symbl_element form=$form.company element=web label=true}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    {symbl_element form=$form.company element=phone  label=true}
+                </div>
+                <div class=" col-md-6">
+                    {symbl_element form=$form.company element=fax label=true}
+                </div>
+            </div>
+
+
+
+            <h3 class="page-header">{$I18N["section[address]"]}</h3>
+            {symbl_element form=$form.company element=street label=true}
+
+            <div class="row">
+                <div class="col-md-3">
+                    {symbl_element form=$form.company element=zip  label=true}
+                </div>
+                <div class="col-md-4">
+                    {symbl_element form=$form.company element=city label=true}
+                </div>
+                <div class="col-md-5">
+                    {symbl_element form=$form.company element=fk_country label=true}
+                </div>
+
+            </div>
+
+
+            <h3 class="page-header">{$I18N["section[contact]"]}</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                    {symbl_element form=$form.company element=person_firstname label=true}
+                </div>
+                <div class="col-md-8">
+                    {symbl_element form=$form.company element=person_lastname label=true}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    {symbl_element form=$form.company element=person_email  label=true}
+                </div>
+                <div class="col-md-6">
+                    {symbl_element form=$form.company element=person_phone label=true}
+                </div>
+            </div>
+
+            <h3 class="page-header">{$I18N["section[logo]"]}</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                    {symbl_element form=$form element="upload" label=false url="`$WWW_PROJECT_HOME_DIR`upload/" help=$I18N["company[mediafile][help]"]}
+                </div>
+                <div class="col-md-8">
+
+                    <img id="preview" class="img-thumbnail" src="{$form.thumburl.value}" />
+
+                </div>
+            </div>
+
+
+            <div class="invisible">
+                {symbl_element form=$form element="thumburl"}
+            </div>
+
+
+            {symbl_element form=$form.company element=benefits help=$I18N["company[benefits][desc]"] label=true}
+
+            {symbl_element form=$form.company element=content help=$I18N["company[content][desc]"] label=true}
+
+
+            <div class="clearfix">
+                <div class="pull-right">
+                    {qf form=$form element=btn_submit class="btn btn-lg btn-primary" value=$I18N->btn_submit}
+                </div>
+            </div>
+
+
+
+        </form>
+
+        {pagedata_activate group=["fileupload"]}
+        {jquery}
+
+            $('.fileupload').fileupload({
+                dataType        : 'json',
+                maxChunkSize    : 2 * 1000 * 1000, // 2 MB
+                maxFileSize     : 1 * 1000 * 1000, // 5 MB
+                paramName       : 'upload',
+                acceptFileTypes : new RegExp('(\.|\/)(jpe?g|png)', 'i'),
+                add: function (e, data) {
+                    var uploadErrors = [];
+
+                    var acceptFileTypes = new RegExp('(\.|\/)(jpe?g|png)', 'i')
+                    if (data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+                        uploadErrors.push('{$I18N->fe_upload_filetype}');
+                    }
+
+                    if (data.originalFiles[0]['size'] > (2 * 1000 * 1000)) {
+                        uploadErrors.push('{$I18N->fe_upload_filesize}');
+                    }
+                    if (uploadErrors.length > 0) {
+                        alert(uploadErrors.join("\n"));
+                    } else {
+                        data.submit();
+                    }
+
+                },
+                done            : function (e, data) {
+                    $('img#preview').attr('src', data.result.thumb.replace('#param#', '200x200x1'));
+                    $('input[type="hidden"][name="company[mediafile]"]').val(data.result.path);
+                    $('input[type="hidden"][name="company[mediafile_title]"]').val(data.result.name);
+                    $('input[type="hidden"][name="company[mediafile_type]"]').val(data.result.type);
+                    $('input[name="thumburl"]').val(data.result.thumb.replace('#param#', '200x200x1'));
+                }
+            });
+
+        {/jquery}
+
+
+
+
+{/symbl_php_module}
+{/if}

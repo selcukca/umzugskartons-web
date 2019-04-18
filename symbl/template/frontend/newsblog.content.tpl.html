@@ -1,0 +1,43 @@
+
+<div class="container">
+
+    <h1>{$oHolder->data->title}</h1>
+    <div>{$oHolder->data->teaser}</div>
+
+
+    <div class="row">
+
+        <div class="col-md-{if $PAGE.container->count()}10{else}12{/if}">
+
+
+            {foreach from=$PAGE.module item=content}
+
+                {symbl_module load=$content->module->ident content=$content holder=$content->holder}
+
+            {/foreach}
+
+
+            {symbl_module load="basic/comment" table=$oHolder->data}
+
+
+        </div>
+
+
+        {if $PAGE.container->count()}
+        <div class="col-md-2">
+
+            {foreach from=$PAGE.container item=relation}
+
+                {if $URL_TK_VALUE}<div style="background-color:yellow;">[{$relation->container->ident}]</div>{/if}
+                {symbl_container load=$relation->container->ident relation=$relation}
+
+
+            {/foreach}
+
+        </div>
+        {/if}
+
+    </div>
+
+</div>
+

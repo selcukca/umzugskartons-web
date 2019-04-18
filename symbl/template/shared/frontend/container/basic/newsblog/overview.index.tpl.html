@@ -1,0 +1,32 @@
+{symbl_screen load=$relation->module->ident}
+
+{if $relation->subdata && $relation->subdata->load(1)}
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading"><h3 class="panel-title">News</h3></div>
+
+        <div class="panel-body">
+        {foreach from=$relation->subdata item=oNews}
+
+            <h4>{symbl_link linkto=$oNews->data->linkto show=true}{$oNews->data->title}{/symbl_link}</h4>
+
+            <div>
+                {$oNews->data->content|truncate:40:"..."}
+
+                {if $oNews->data->linkto->isLink()}
+                    {symbl_link linkto=$oNews->data->linkto}{$I18N->lb_more}{/symbl_link}
+                {/if}
+
+            </div>
+
+            <p>&nbsp;</p>
+
+
+        {/foreach}
+        </div>
+
+    </div>
+
+
+{/if}

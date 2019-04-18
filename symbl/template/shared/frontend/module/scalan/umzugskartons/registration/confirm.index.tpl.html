@@ -1,0 +1,33 @@
+{symbl_php_module load=$content->module->ident screen=true}
+
+    {if $form.frozen}
+
+        {$redirect = $STRUCTURE["OVERVIEW"]}
+
+        {if $AUTH->getAuth()}
+            {if $BASKET.PACKAGE}
+                {if $o = $STRUCTURE["BASKET"]}
+                    {$redirect = $o}
+                {/if}
+            {/if}
+        {/if}
+
+
+        {if $redirect}
+            {$seconds = 5}
+            {symbl_redirect structure=$redirect type="meta" seconds=$seconds}
+            {capture name="link"}{symbl_link linkto=$redirect->linkto}{$redirect->lang->title}{/symbl_link}{/capture}
+            {$I18N["redirect.message"]|replace:["#seconds#", "#link#"]:[$seconds, $smarty.capture.link]}
+        {/if}
+
+
+
+    {else}
+
+        {symbl_module load=$content->module->ident file="form"}
+
+    {/if}
+
+
+{/symbl_php_module}
+

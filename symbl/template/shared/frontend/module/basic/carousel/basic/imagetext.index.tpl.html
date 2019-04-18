@@ -1,0 +1,23 @@
+
+{if $holder && ($holder->data->media->isFile() || $holder->lang->media->isFile())}
+
+
+    {if $holder->lang->media->isFile()}
+        {*symbl_link media=$holder->lang->media data-lightbox-gallery="appshots"*}
+            {symbl_image media=$holder->lang->media size="original"}
+        {*/symbl_link*}
+    {else}
+        {*symbl_link media=$holder->data->media data-lightbox-gallery="appshots"*}
+            {symbl_image media=$holder->data->media size=$holder->data->extra3|default:"original"}
+        {*/symbl_link*}
+    {/if}
+
+
+    <div class="carousel-caption">
+        {if $holder->lang->title}<h3>{$holder->lang->title}</h3>{/if}
+
+        <div>{$holder->lang->content}</div>
+
+    </div>
+
+{/if}

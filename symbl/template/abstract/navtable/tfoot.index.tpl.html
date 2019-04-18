@@ -1,0 +1,19 @@
+<tfoot>
+    <tr>
+        <td colspan="{$navtable.query.columns|@count}" class="actions">
+
+            <div class="row">
+                <div class="col-md-6">
+                    {symbl_include load="abstract/navtable/tfoot" file="entry"}
+                </div>
+                <div class="col-md-6">
+                    {symbl_include load="abstract/navtable/tfoot" file="pager" pager=$navtable.query.pager}
+                </div>
+
+            </div>
+
+
+
+        </td>
+    </tr>
+</tfoot>

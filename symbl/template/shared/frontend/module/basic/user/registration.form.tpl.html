@@ -1,0 +1,61 @@
+
+<form{$form.attributes}>
+    {$form.hidden}
+
+    {symbl_element form=$form element=usr  label=$I18N->lb_usr}
+
+    {symbl_element form=$form element=email      label=$I18N->lb_email}
+
+    <div class="row">
+        <div class="col-xs-6">
+            {symbl_element form=$form element=pwd1  label=$I18N->lb_pwd1}
+        </div>
+        <div class="col-xs-6">
+            {symbl_element form=$form element=pwd2   label=$I18N->lb_pwd2}
+        </div>
+    </div>
+
+
+    <hr />
+
+    {symbl_element form=$form element=company    label=$I18N->lb_company}
+
+    <div class="row">
+        <div class="col-xs-6">
+            {symbl_element form=$form element=firstname  label=$I18N->lb_firstname}
+        </div>
+        <div class="col-xs-6">
+            {symbl_element form=$form element=lastname   label=$I18N->lb_lastname}
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-10">
+            {symbl_element form=$form element=street1    label=$I18N->lb_street1}
+        </div>
+        <div class="col-xs-2">
+            {symbl_element form=$form element=street2    label=$I18N->lb_street2}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            {symbl_element form=$form element=zip        label=$I18N->lb_zip}
+        </div>
+        <div class="col-xs-8">
+            {symbl_element form=$form element=city       label=$I18N->lb_city}
+        </div>
+    </div>
+
+
+
+    {symbl_element form=$form element=title      label=$I18N->lb_title}
+    {symbl_element form=$form element=content    label=$I18N->lb_content}
+
+
+    {qf form=$form element=btn_submit class="btn btn-primary" value=$I18N->btn_submit}
+
+</form>
+

@@ -1,0 +1,47 @@
+{if !isset($error)}
+    {$error = $form.$element.error}
+{/if}
+
+<div class="form-group">
+
+    {if !empty($label)}
+        <label for="{$form.$element.id}">
+
+            {if $label === true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$I18N->get($label, $label)}
+            {/if}
+            {if $form.$element.required} {$I18N['element.required']}{/if}
+
+        </label>
+    {/if}
+
+    <div class="custom-control custom-checkbox">
+        {qf form=$form element=$element class="custom-control-input{if $form.$element.error} is-invalid{/if}"}
+
+        {if !empty($value)}
+            <label class="custom-control-label" for="{$form.$element.id}">
+            {if $value ===true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$value}
+            {/if}
+            </label>
+        {/if}
+        {if !empty($help)}
+            <div>
+                <small class="text-muted">{$help}</small>
+            </div>
+        {/if}
+
+
+        {if $error}
+            <div class="invalid-feedback">{$I18N->get($error, $error)}</div>
+        {/if}
+
+    </div>
+
+
+
+</div>

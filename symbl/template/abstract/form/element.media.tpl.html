@@ -1,0 +1,87 @@
+{$media_error = $form.$element.error}
+
+<div class="form-group{if $media_error} has-error{/if}">
+
+    {if !empty($label)}
+        <label>
+            {if $label ===true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$label}
+            {/if}
+            {if $form.$element.required} {$I18N->required}{/if}
+        </label>
+    {/if}
+
+    {if !isset($media_template)}
+        {$media_template = $element}
+    {/if}
+
+    {if !isset($media_title)}
+        {$media_title = "title"}
+    {/if}
+
+    <div class="row">
+
+        {if isset($media)}
+        <div class="col-md-2">
+                {if $media->isPdf()}
+
+                    {symbl_image media=$media size="100x100x1" class="img-thumbnail{if !$media->isMediaFile()} invisible{/if}" name=$form.$element.name data-fancybox-type="iframe" data-fancybox-href="{$WWW_MEDIA_DIR}pdf/viewer.html?file={$media->getUrl()}" data-fancybox-title=$media->getMediaTitle()}
+                {else}
+                    {symbl_image media=$media size="100x100x1" class="img-thumbnail{if !$media->isMediaFile()} invisible{/if}" name=$form.$element.name data-fancybox-type="{if $media->isVideo()}video{else}image{/if}" data-fancybox-href=$media->getUrl() data-fancybox-title=$media->getMediaTitle()}
+                {/if}
+                {**
+                <img class="img-thumbnail invisible" name="{$form.$element.name}" />
+            **}
+
+
+        </div>
+        {/if}
+
+        <div class="col-md-10">
+            <div class="clearfix">
+                <div class="pull-left">
+                    {symbl_element form=$form element="`$media_template`_upload" label=$prefix|default:null}
+                </div>
+
+                <div class="pull-left">
+                    {*symbl_element form=$form element="`$media_template`_mediapool" label=$I18N->btn_choose_media class="btn btn-default btn-sm"*}
+                </div>
+
+                <div class="pull-left">
+                    {if isset($media) && $media->isMediaFile()}
+                        {$style = false}
+                    {else}
+                        {$style="display:none;"}
+                    {/if}
+
+                    {symbl_element form=$form element="`$media_template`_remove" label=$I18N->btn_remove_media class="btn btn-danger btn-sm" attributes=["style" => $style]}
+                </div>
+
+            </div>
+            {if isset($description)}
+                <div class="help-block">{$description}</div>
+            {/if}
+        </div>
+    </div>
+
+
+
+    {if $media_error}
+        <span class="help-block error">{$I18N->get($media_error, $media_error)}</span>
+    {/if}
+
+
+</div>
+
+
+<div class="well well-sm bg-gray-lighter collapse " id="{$form.$element.name|md5}">
+
+
+    {symbl_include load="abstract/form/element" file="standard" label=$I18N->mediafile prefix=null}
+    {symbl_element form=$form element="`$media_template`_`$media_title`" label=$I18N->mediatitle prefix=null}
+    {symbl_element form=$form element="`$media_template`_type" label=$I18N->mediatype prefix=null}
+    {symbl_element form=$form element="`$media_template`_size" label=$I18N->mediasize prefix=null}
+    {symbl_element form=$form element="`$media_template`_duration" label=$I18N->mediaduration prefix=null}
+</div>

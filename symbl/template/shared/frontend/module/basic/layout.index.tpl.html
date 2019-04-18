@@ -1,0 +1,12 @@
+
+<div>
+{foreach from=$content->subdata item=subcontent}
+
+
+    {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+
+
+{/foreach}
+
+</div>
+

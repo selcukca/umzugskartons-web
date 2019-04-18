@@ -1,0 +1,18 @@
+<tr>
+
+    <td colspan="{$navtable.query.columns|@count}" class="actions">
+
+
+        <div class="btn-group">
+
+            {symbl_include load="abstract/navtable/thead/toolbar" file="view"}
+            {symbl_include load="abstract/navtable/thead/toolbar" file="filter"}
+            {symbl_include load="abstract/navtable/thead/toolbar" file="order"}
+            {symbl_include load="abstract/navtable/thead/toolbar" file="pager" pager=$navtable.query.pager}
+
+
+        </div>
+
+    </td>
+
+</tr>

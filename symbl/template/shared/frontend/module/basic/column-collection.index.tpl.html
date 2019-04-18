@@ -1,0 +1,26 @@
+{assign var="columns" value=$content->extra1|default:1}
+
+
+
+{if $content->subdata->count()}
+
+    <div class="row{if isset($parent) && ($parent->module->ident == "bootstrap/newage/header")} h-100{/if} mod mod-column-collection">
+
+        {section name="column" loop=$columns}
+
+            {$css = $content->getClassByColumn($smarty.section.column.index)}
+            <div class="{if $css}{$css}{else}col-md-{12 / $columns} col-sm-{24 / $columns}{/if}">
+
+                {foreach name="columns" from=$content->subdata->filter('content', 'colnr', '==', $smarty.section.column.index) item=subcontent}
+
+                    {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder first=$smarty.foreach.columns.first}
+
+                {/foreach}
+
+            </div>
+
+        {/section}
+
+    </div>
+
+{/if}

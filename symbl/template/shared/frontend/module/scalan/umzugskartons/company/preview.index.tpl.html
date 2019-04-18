@@ -1,0 +1,23 @@
+<div class="card w-100">
+
+  <div class="card-body">
+        <div class="media">
+
+            {symbl_image class="align-self-start mr-3" media=$USER->relocation->media size="100x100x1"}
+
+            <div class="media-body">
+                <h4 class="media-heading">{$USER->relocation->title|default:$I18N["company[preview][title]"]}</h4>
+                <div>{$USER->relocation->getFormattedContent()|default:$I18N["company[preview][content]"]}</div>
+            </div>
+        </div>
+        {if $USER->relocation->orders->has("premium")}
+
+
+            <div class="text-right">
+                {symbl_link class="card-link" linkto=$STRUCTURE["PROFILE_DATA"]->linkto}{$I18N["btn_change_message"]}{/symbl_link}
+            </div>
+
+        {/if}
+  </div>
+</div>
+

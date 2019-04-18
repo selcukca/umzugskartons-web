@@ -1,0 +1,13 @@
+
+
+{if (($content->extra1 == 0) || (($content->extra1 == 1) && ($USER->id)) || (($content->extra1 == -1) && (!$USER->id)))}
+
+    {foreach from=$content->subdata item=subcontent}
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder}
+
+    {/foreach}
+
+{/if}
+
+

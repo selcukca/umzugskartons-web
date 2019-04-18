@@ -1,0 +1,786 @@
+
+array (
+  'time' => '2018-09-10 14:55:19',
+  'invoice' => 
+  array (
+    'fk_activation' => 6,
+    'klarna_order_id' => 'b97c51c4-bdf0-4431-8678-51d62ebe2a5e',
+    'ident' => '2018/de/000001',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 1,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'is_user_reported' => 0,
+      'rating_cnt' => 14,
+      'rating_avg' => 4,
+      'selection_cnt' => 8,
+      'activation_cnt' => 4,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-09 23:20:29',
+    ),
+    'package' => 
+    array (
+      'id' => 1,
+      'ident' => 'basic',
+      'url' => 'umzugsunternehmen/pakete/basic/',
+      'title' => 'Basic',
+      'content' => NULL,
+      'price' => 49.950000000000003,
+      'free_months' => 0,
+      'items' => NULL,
+      'fk_products' => 
+      array (
+        0 => '3',
+      ),
+      'mediafile' => NULL,
+      'mediafile_title' => NULL,
+      'mediafile_type' => NULL,
+      'score' => 0,
+      'fk_status' => 3,
+      'user_created' => 1,
+      'user_updated' => 1,
+      'created' => '2017-08-22 12:16:44',
+      'updated' => '2018-09-09 13:59:46',
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-10 14:51:34',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => 'b97c51c4-bdf0-4431-8678-51d62ebe2a5e',
+  ),
+)
+
+
+array (
+  'time' => '2018-09-12 18:47:24',
+  'invoice' => 
+  array (
+    'fk_activation' => 9,
+    'klarna_order_id' => 'aad16917-dd7e-4138-b95e-1ecfd94f79d0',
+    'fk_user' => 1,
+    'ident' => '2018/de/000004',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 1,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'is_user_reported' => 0,
+      'rating_cnt' => 14,
+      'rating_avg' => 4,
+      'selection_cnt' => 9,
+      'activation_cnt' => 8,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-12 12:31:42',
+    ),
+    'package' => 
+    array (
+      'id' => 1,
+      'ident' => 'basic',
+      'url' => 'umzugsunternehmen/pakete/basic/',
+      'title' => 'Basic',
+      'subtitle' => NULL,
+      'content' => NULL,
+      'price' => 49.950000000000003,
+      'free_months' => 0,
+      'items' => NULL,
+      'fk_products' => 
+      array (
+        0 => '3',
+      ),
+      'mediafile' => NULL,
+      'mediafile_title' => NULL,
+      'mediafile_type' => NULL,
+      'score' => 0,
+      'fk_status' => 3,
+      'user_created' => 1,
+      'user_updated' => 1,
+      'created' => '2017-08-22 12:16:44',
+      'updated' => '2018-09-10 22:02:49',
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-12 18:46:30',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => 'aad16917-dd7e-4138-b95e-1ecfd94f79d0',
+  ),
+)
+
+
+array (
+  'time' => '2018-09-21 15:11:04',
+  'invoice' => 
+  array (
+    'fk_activation' => 19,
+    'klarna_order_id' => '019f2f31-4149-4bf4-9d55-f8fc8aa9d459',
+    'fk_user' => 1,
+    'ident' => '2018/gb/000001',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 4,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'has_public_profile' => 1,
+      'is_user_reported' => 0,
+      'rating_cnt' => 42,
+      'rating_avg' => 4,
+      'selection_cnt' => 38,
+      'activation_cnt' => 22,
+      'shares_cnt' => 64,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-21 15:05:55',
+    ),
+    'package' => 
+    array (
+      'data' => 
+      array (
+        'id' => 3,
+        'ident' => 'premium',
+        'url' => 'umzugsunternehmen/pakete/premium/',
+        'title' => 'Premium',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'price' => 99.950000000000003,
+        'prices' => 
+        array (
+          'EUR' => 99.950000000000003,
+          'USD' => 99.950000000000003,
+          'CHF' => 119.95,
+          'GBP' => 89.950000000000003,
+        ),
+        'free_months' => 2,
+        'items' => '+ Nachricht für Ihre Kunden anpassbar
++ Statistiken',
+        'fk_products' => 
+        array (
+          0 => '3',
+          1 => '1',
+          2 => '2',
+        ),
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'score' => 2,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2017-08-22 12:20:23',
+        'updated' => '2018-09-21 12:15:57',
+      ),
+      'lang' => 
+      array (
+        'fk_id' => 3,
+        'fk_lang' => 1,
+        'url' => 'partner/paket/premium/',
+        'title' => 'Premium',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'items' => '+ Nachricht für Ihre Kunden anpassbar
++ Statistiken',
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2018-09-20 14:50:56',
+        'updated' => '2018-09-20 14:51:13',
+      ),
+    ),
+    'coupon' => 
+    array (
+      'id' => 1,
+      'ident' => 'xing2018',
+      'content' => NULL,
+      'fk_packages' => 
+      array (
+        0 => '3',
+      ),
+      'quantity' => 2,
+      'discount_type' => 'fixed',
+      'discount' => 10,
+      'prices' => 
+      array (
+        'EUR' => 150.0,
+        'USD' => 100.0,
+        'CHF' => 50.0,
+        'GBP' => 70.799999999999997,
+      ),
+      'valid_from' => NULL,
+      'valid_until' => NULL,
+      'activation_cnt' => 0,
+      'fk_status' => 3,
+      'user_created' => NULL,
+      'user_updated' => 1,
+      'created' => NULL,
+      'updated' => '2018-09-21 14:34:46',
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-21 15:08:25',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => '019f2f31-4149-4bf4-9d55-f8fc8aa9d459',
+  ),
+)
+
+
+array (
+  'time' => '2018-09-25 00:15:24',
+  'invoice' => 
+  array (
+    'fk_activation' => 4,
+    'klarna_order_id' => 'a9eb6ce0-8627-4765-92d7-e8887fb95dd8',
+    'fk_user' => 1,
+    'ident' => '2018/de/000001',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_gender' => NULL,
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 1,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'has_public_profile' => 1,
+      'is_user_reported' => 0,
+      'rating_cnt' => 43,
+      'rating_avg' => 4,
+      'selection_cnt' => 39,
+      'activation_cnt' => 17,
+      'shares_cnt' => 65,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-23 11:40:45',
+    ),
+    'package' => 
+    array (
+      'data' => 
+      array (
+        'id' => 2,
+        'ident' => 'pro',
+        'url' => 'umzugsunternehmen/pakete/pro/',
+        'title' => 'Pro',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'price' => 79.950000000000003,
+        'prices' => 
+        array (
+          'EUR' => 79.950000000000003,
+          'USD' => 79.950000000000003,
+          'CHF' => 99.950000000000003,
+          'GBP' => 69.950000000000003,
+        ),
+        'free_months' => 1,
+        'items' => NULL,
+        'fk_products' => 
+        array (
+          0 => '3',
+          1 => '1',
+          2 => '2',
+        ),
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'score' => 1,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2017-08-22 12:20:04',
+        'updated' => '2018-09-21 12:15:46',
+      ),
+      'lang' => 
+      array (
+        'fk_id' => 2,
+        'fk_lang' => 1,
+        'url' => 'partner/paket/pro/',
+        'title' => 'Pro',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'items' => NULL,
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2018-09-20 14:49:36',
+        'updated' => '2018-09-20 14:50:15',
+      ),
+    ),
+    'coupon' => 
+    array (
+      'id' => 0,
+      'ident' => NULL,
+      'content' => NULL,
+      'fk_packages' => 
+      array (
+      ),
+      'quantity' => 0,
+      'discount_type' => 'percent',
+      'discount' => 0,
+      'prices' => NULL,
+      'valid_from' => NULL,
+      'valid_until' => NULL,
+      'activation_cnt' => '0',
+      'fk_status' => 3,
+      'user_created' => NULL,
+      'user_updated' => NULL,
+      'created' => NULL,
+      'updated' => NULL,
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-23 13:24:52',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => 'a9eb6ce0-8627-4765-92d7-e8887fb95dd8',
+  ),
+)
+
+
+array (
+  'time' => '2018-09-25 08:28:11',
+  'invoice' => 
+  array (
+    'fk_activation' => 8,
+    'klarna_order_id' => 'e3d7fc6f-650e-4132-9a70-9b2a5d637766',
+    'fk_user' => 1,
+    'ident' => '2018/de/000005',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_gender' => 'female',
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 1,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'has_public_profile' => 1,
+      'is_user_reported' => 0,
+      'rating_cnt' => 43,
+      'rating_avg' => 4,
+      'selection_cnt' => 39,
+      'activation_cnt' => 17,
+      'shares_cnt' => 65,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-23 17:13:03',
+    ),
+    'package' => 
+    array (
+      'data' => 
+      array (
+        'id' => 3,
+        'ident' => 'premium',
+        'url' => 'umzugsunternehmen/pakete/premium/',
+        'title' => 'Premium',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'price' => 99.950000000000003,
+        'prices' => 
+        array (
+          'EUR' => 99.950000000000003,
+          'USD' => 99.950000000000003,
+          'CHF' => 119.95,
+          'GBP' => 89.950000000000003,
+        ),
+        'free_months' => 2,
+        'items' => '+ Nachricht für Ihre Kunden anpassbar
++ Statistiken',
+        'fk_products' => 
+        array (
+          0 => '3',
+          1 => '1',
+          2 => '2',
+        ),
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'score' => 2,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2017-08-22 12:20:23',
+        'updated' => '2018-09-21 12:15:57',
+      ),
+      'lang' => 
+      array (
+        'fk_id' => 3,
+        'fk_lang' => 1,
+        'url' => 'portal/paket/premium/',
+        'title' => 'Premium',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'items' => '+ Nachricht für Ihre Kunden anpassbar
++ Statistiken',
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2018-09-20 14:50:56',
+        'updated' => '2018-09-20 14:51:13',
+      ),
+    ),
+    'coupon' => 
+    array (
+      'id' => 0,
+      'ident' => NULL,
+      'content' => NULL,
+      'fk_packages' => 
+      array (
+      ),
+      'quantity' => 0,
+      'discount_type' => 'percent',
+      'discount' => 0,
+      'prices' => NULL,
+      'valid_from' => NULL,
+      'valid_until' => NULL,
+      'activation_cnt' => '0',
+      'fk_status' => 3,
+      'user_created' => NULL,
+      'user_updated' => NULL,
+      'created' => NULL,
+      'updated' => NULL,
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-25 08:26:36',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => 'e3d7fc6f-650e-4132-9a70-9b2a5d637766',
+  ),
+)
+
+
+array (
+  'time' => '2018-09-25 08:32:03',
+  'invoice' => 
+  array (
+    'fk_activation' => 9,
+    'klarna_order_id' => 'df05d260-8d1c-47f3-b72c-2358e2dd215e',
+    'fk_user' => 1,
+    'ident' => '2018/de/000006',
+    'company' => 
+    array (
+      'id' => 1,
+      'title' => 'Umzugskartons App',
+      'person_gender' => 'female',
+      'person_firstname' => 'Selcuk',
+      'person_lastname' => 'Alan',
+      'person_email' => 'info@umzugskartons.app',
+      'person_phone' => NULL,
+      'content' => '[[zip]] [[city]]
+
+E-Mail: [[email]]
+Internet: [[web]]',
+      'benefits' => 'Entwicklung der App
+Support',
+      'mediafile' => 'company/0001/1bb87d41d15fe27b500a4bfcde01bb0e.png',
+      'mediafile_title' => 'logo.png',
+      'mediafile_type' => 'image/png',
+      'phone' => '',
+      'email' => 'info@umzugskartons.app',
+      'web' => 'http://www.umzugskartons.app',
+      'fax' => '',
+      'street' => '',
+      'zip' => '41564',
+      'city' => 'Kaarst',
+      'fk_country' => 1,
+      'country_tmp' => NULL,
+      'latitude' => '51.2267088',
+      'longitude' => '6.6199937',
+      'notice' => '',
+      'has_public_profile' => 1,
+      'is_user_reported' => 0,
+      'rating_cnt' => 43,
+      'rating_avg' => 4,
+      'selection_cnt' => 39,
+      'activation_cnt' => 17,
+      'shares_cnt' => 65,
+      'package' => 'premium',
+      'fk_status' => 3,
+      'user_created' => 0,
+      'user_updated' => 1,
+      'created' => '2017-09-15 07:30:00',
+      'updated' => '2018-09-23 17:13:03',
+    ),
+    'package' => 
+    array (
+      'data' => 
+      array (
+        'id' => 1,
+        'ident' => 'basic',
+        'url' => 'umzugsunternehmen/pakete/basic/',
+        'title' => 'Basic',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'price' => 49.950000000000003,
+        'prices' => 
+        array (
+          'EUR' => 49.950000000000003,
+          'USD' => 49.950000000000003,
+          'CHF' => 59.950000000000003,
+          'GBP' => 39.950000000000003,
+        ),
+        'free_months' => 0,
+        'items' => NULL,
+        'fk_products' => 
+        array (
+          0 => '3',
+        ),
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'score' => 0,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2017-08-22 12:16:44',
+        'updated' => '2018-09-21 12:15:32',
+      ),
+      'lang' => 
+      array (
+        'fk_id' => 1,
+        'fk_lang' => 1,
+        'url' => 'portal/paket/basic/',
+        'title' => 'Basic',
+        'subtitle' => NULL,
+        'content' => NULL,
+        'items' => NULL,
+        'mediafile' => NULL,
+        'mediafile_title' => NULL,
+        'mediafile_type' => NULL,
+        'fk_status' => 3,
+        'user_created' => 1,
+        'user_updated' => 1,
+        'created' => '2018-09-20 14:47:01',
+        'updated' => '2018-09-24 15:42:24',
+      ),
+    ),
+    'coupon' => 
+    array (
+      'id' => 0,
+      'ident' => NULL,
+      'content' => NULL,
+      'fk_packages' => 
+      array (
+      ),
+      'quantity' => 0,
+      'discount_type' => 'percent',
+      'discount' => 0,
+      'prices' => NULL,
+      'valid_from' => NULL,
+      'valid_until' => NULL,
+      'activation_cnt' => '0',
+      'fk_status' => 3,
+      'user_created' => NULL,
+      'user_updated' => NULL,
+      'created' => NULL,
+      'updated' => NULL,
+    ),
+    'is_payed' => 0,
+    'fk_status' => 3,
+    'user_created' => 1,
+    'user_updated' => NULL,
+    'created' => '2018-09-25 08:31:18',
+    'updated' => NULL,
+  ),
+  'POST' => 
+  array (
+  ),
+  'GET' => 
+  array (
+  ),
+  'ARGV' => 
+  array (
+    0 => 'df05d260-8d1c-47f3-b72c-2358e2dd215e',
+  ),
+)
+

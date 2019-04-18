@@ -1,0 +1,79 @@
+
+{if isset($pager)}
+
+
+    {assign var="maxpage" value=5}
+    {math equation="max(1, min(current-((maxpage-1)/2), last-(maxpage-1)))" current=$pager.current maxpage=$maxpage last=$pager.lastpage assign="startPage"}
+
+
+    {if isset($navtable.form.page) && isset($form.navtable.limit.page.html)}
+
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon">Page</div>
+                {qf form=$form.navtable.limit element=page class="form-control input-sm"}
+            </div>
+        </div>
+
+
+    {else}
+
+        <ul class="pagination pagination-sm">
+
+        {if $pager.current > 1}
+
+            {if $pager.current > 3 && $pager.lastpage > 4}
+                <li><a href="javascript:void(0);" onclick="Symbl.Navtable.setPage('{$navtable.id}', '{$pager.firstpage}');"><span class="glyphicon glyphicon-step-backward"></span></a></li>
+            {/if}
+            <li><a href="javascript:void(0);" onclick="Symbl.Navtable.setPage('{$navtable.id}', '{$pager.current-1}');"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+
+        {/if}
+
+
+
+        {section name=pages loop=$pager.pages max=$maxpage}
+            {math equation="x+y" x=$smarty.section.pages.index y=$startPage assign="page"}
+
+            {if $page > 0 && $page <= $pager.numpages}
+
+                <li{if $page == $pager.current} class="active"{/if}>
+                    {if $page == $pager.current}
+                        <span>{$page} <span class="sr-only">{$page}</span></span>
+                    {else}
+                        <a href="javascript:void(0);" onclick="Symbl.Navtable.setPage('{$navtable.id}', '{$page}');">{$page}</a>
+                    {/if}
+                </li>
+
+            {/if}
+
+        {/section}
+
+
+
+        {if $pager.current < $pager.lastpage}
+
+            <li><a href="javascript:void(0);" onclick="Symbl.Navtable.setPage('{$navtable.id}', '{$pager.current+1}');"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+
+            {if ($startPage + $maxpage) <= $pager.lastpage}
+
+                <li><a href="javascript:void(0);" onclick="Symbl.Navtable.setPage('{$navtable.id}', '{$pager.lastpage}');"><span class="glyphicon glyphicon-step-forward"></span></a></li>
+
+            {/if}
+
+        {/if}
+    {/if}
+
+    </ul>
+
+
+{/if}
+
+
+
+
+
+
+
+
+
+

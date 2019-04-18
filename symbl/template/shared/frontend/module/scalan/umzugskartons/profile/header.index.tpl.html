@@ -1,0 +1,32 @@
+<div class="row h-75">
+
+    <div class="col">
+        <h1>{$USER->relocation->title}</h1>
+        <h4>{$ROUTE->lang->title}</h4>
+    </div>
+
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">{$STRUCTURE[27]->lang->title}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        {foreach from=$STRUCTURE[27]->childs->getVisibles() item=oStructure}
+            <li class="nav-item{if ($oStructure->isRoute($ROUTE) || $oStructure->isInRouteWay($ROUTE))} active{/if}">
+
+                {symbl_link linkto=$oStructure->linkto class="nav-link"}
+                    {$oStructure->lang->shorttitle|default:$oStructure->lang->title}
+                {/symbl_link}
+
+            </li>
+        {/foreach}
+        </ul>
+    </div>
+</nav>
+
+
+
+

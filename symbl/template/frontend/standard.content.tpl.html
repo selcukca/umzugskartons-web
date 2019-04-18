@@ -1,0 +1,11 @@
+{foreach from=$PAGE.module item=content}
+
+    {symbl_module load=$content->module->ident content=$content holder=$content->holder}
+
+{/foreach}
+
+
+
+
+{symbl_module load="footer"}
+

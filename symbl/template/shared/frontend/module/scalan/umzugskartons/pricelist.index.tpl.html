@@ -1,0 +1,85 @@
+{if $packages = $content->getPackageListByLanguage($LANGUAGE->id)}
+
+    {symbl_module load="scalan/umzugskartons/country" file="selection" elementId="pricing"}
+
+    <div id="pricing" class="pricing-table">
+
+        <div class="row justify-content-md-center">
+            {foreach from=$packages item=oPackage}
+            <div class="col-md-5 col-lg-4">
+                <div class="item">
+                    {if $oPackage->data->ident == "pro"}
+                    <div class="ribbon">{$I18N["package[ribbon]"]}</div>
+                    {/if}
+                    <div class="heading">
+                        <h3>{$oPackage->lang->title|upper}</h3>
+                    </div>
+                    <p>{$oPackage->lang->subtitle}</p>
+                    {*
+                    <div class="features">
+                        <h4><span class="feature">Full Support</span> : <span class="value">No</span></h4>
+                        <h4><span class="feature">Duration</span> : <span class="value">30 Days</span></h4>
+                        <h4><span class="feature">Storage</span> : <span class="value">10GB</span></h4>
+                    </div>
+                    *}
+
+
+                    <ul class="list-unstyled mt-3 mb-4">
+
+                        <li ><strong>+</strong> Firmendaten in der App</li>
+                        {if $oPackage->data->free_months}
+                            <li><strong>+ {$oPackage->data->free_months}</strong> {$I18N->free_months}</li>
+                        {/if}
+
+                        {foreach from=$oPackage->lang->getItems() item=txt}
+                            <li>{$txt}</li>
+                        {/foreach}
+
+                        <li>
+                            <br />Vorteile für Ihre Kunden:
+
+                            <ol class="list-unstyled" style="padding-left:15px">
+                                {foreach from=$oPackage->data->productlist item=oProduct}
+                                    <li><strong>+</strong> {$oProduct->title}</li>
+                                {/foreach}
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <div class="price">
+                        <h4>
+                            {if !$oPackage->data->isFree($USER->relocation->country)}
+                                <small class="text-muted small">ab</small>
+                            {/if}
+                            {$oPackage->data->getFormattedPrice($USER->relocation->country)} *
+                        </h4>
+                    </div>
+
+                    {if $oPackage->data->isAvailableByUser($USER)}
+                        {$query = "package=`$oPackage->data->id`"}
+                        {$STRUCTURE["BASKET"]->data->setPlainValue("urlquery", $query)}
+                        {symbl_link class="btn btn-block btn-{if $oPackage->data->ident != "pro"}outline-{/if}primary" linkto=$STRUCTURE["BASKET"]->linkto}
+                            {$I18N->btn_basket}
+                        {/symbl_link}
+                    {/if}
+
+                    <div class="text-center padding">
+                    {symbl_link class="" linkto=$oPackage->lang->linkto}
+                        {$I18N->btn_detail}
+                    {/symbl_link}
+                    </div>
+                </div>
+
+            </div>
+
+            {/foreach}
+        </div>
+
+    </div>
+
+    <small class="text-muted">* {$I18N["package.message.star"]}</small>
+
+
+
+{/if}

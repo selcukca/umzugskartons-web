@@ -1,0 +1,10 @@
+
+<div class="tab-pane{if $first} active{/if}" id="tab-{$content->id}">
+
+    {foreach from=$content->subdata item=subcontent}
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder}
+
+    {/foreach}
+
+</div>

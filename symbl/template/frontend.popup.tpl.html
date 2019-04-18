@@ -1,0 +1,6 @@
+
+{if isset($PAGE.carousel)}
+    {symbl_module load=$PAGE.carousel->module->ident content=$PAGE.carousel holder=$PAGE.carousel->holder}
+{/if}
+
+{$PAGE.content}

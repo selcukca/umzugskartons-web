@@ -1,0 +1,20 @@
+
+<section class="bg-tertiary text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+
+                <h2 class="section-heading">{$I18N["package[title]"]} {$oPackage->lang->title}</h2>
+                <h4 class="mb-4">ab {$oPackage->data->getFormattedPrice($USER->relocation->country)} {$I18N->per_month}</h4>
+
+                {$query = "package=`$oPackage->data->id`"}
+                {$STRUCTURE["BASKET"]->data->setPlainValue("urlquery", $query)}
+                {symbl_link class="btn btn-outline btn-xl" linkto=$STRUCTURE["BASKET"]->linkto}
+                    {$I18N->btn_basket}
+                {/symbl_link}
+            </div>
+
+
+        </div>
+    </div>
+</section>

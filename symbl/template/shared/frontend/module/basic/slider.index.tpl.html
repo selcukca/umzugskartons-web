@@ -1,0 +1,39 @@
+</div>
+<div class="container-fluid">
+<div id="owl-{$content->id}" class="owl-carousel owl-theme">
+
+    {foreach from=$content->subdata item=subcontent}
+
+        <div class="shot">
+            {symbl_module load="`$content->module->ident`/`$subcontent->module->ident`" content=$subcontent holder=$subcontent->holder parent=$content}
+        </div>
+
+    {/foreach}
+
+</div>
+</div>
+<div class="container">
+
+{jquery}
+    $('#owl-{$content->id}').owlCarousel({
+        margin:          20,
+        responsiveClass: true,
+        responsive:      {
+            0: {
+                items: 1,
+                nav:   false
+            },
+            500: {
+                items: 2,
+                nav:   false
+            },
+            1000: {
+                items: 4,
+                nav:   false,
+                loop:  false
+            }
+        }
+    });
+
+{/jquery}
+

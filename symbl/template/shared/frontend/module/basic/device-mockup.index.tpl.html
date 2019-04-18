@@ -1,0 +1,37 @@
+
+{$carouselId = $content->ident|default:"carousel-{$content->id}"}
+
+
+<div class="device-wrapper{if $classname = $content->getDevice()->getClass()} {$classname}{/if}">
+    <div class="device" data-device="{$content->getDevice()->getType()}" data-orientation="{$content->getDevice()->getOrientation()}" data-color="{$content->getDevice()->getColor()}">
+        <div class="screen">{*style="background-image: url('{$holder->media->getThumbUrl()|replace:"#param#":"original"}')">*}
+            <!-- PUT CONTENTS HERE -->
+
+            {$gallery = $content->subdata->getWithMedia()}
+            <div id="{$carouselId}" class="carousel slide" data-ride="carousel">
+                {if $gallery->count()}
+                <ol class="carousel-indicators">
+                    <li data-target="#{$carouselId}" data-slide-to="0" class="active"></li>
+                    {foreach from=$gallery->reindex(false) key="idx" item=subcontent}
+                        <li data-target="#{$carouselId}" data-slide-to="{$idx+1}"></li>
+                    {/foreach}
+                </ol>
+                {/if}
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{$holder->media->getThumbUrl()|replace:"#param#":"original"}" alt="">
+                    </div>
+                    {foreach from=$gallery item=subcontent}
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="{$subcontent->holder->media->getThumbUrl()|replace:"#param#":"original"}" alt="">
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+
+        </div>
+        <div class="button">
+
+        </div>
+    </div>
+</div>

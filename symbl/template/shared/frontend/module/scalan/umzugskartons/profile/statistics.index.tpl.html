@@ -1,0 +1,99 @@
+
+{symbl_module load="scalan/umzugskartons/profile/overview" file="navigation"}
+
+
+
+
+{if $USER->relocation->orders->has('premium')}
+
+    {symbl_php_module load=$content->module->ident screen=[$content->module->ident, "form/abstract"]}
+    <div class="table-responsive">
+        <table class="table">
+            <colgroup>
+                <col  />
+                <col width="350" />
+                <col width="150" />
+            </colgroup>
+
+            <tbody>
+                <tr{if $statistic.type == "activation"} class="bg-light"{/if}>
+                    <th>
+                        {$I18N["company.activation_cnt"]}
+                        <div class="text-muted">{$I18N["company.help.activation_cnt"]}</div>
+                    </th>
+                    <td>{$USER->relocation->activation_cnt}</td>
+                    <td>
+                        <a href="{$WWW_SCRIPT_DIR}{$WWW_ARGV}?type=activation">{$I18N["company.button.statistics.details"]}</a>
+                        <a href="{$WWW_HOME_DIR}download/partner/statistic/activation/">{$I18N["company.button.statistics.download"]}</a>
+                    </td>
+                </tr>
+                {symbl_module type="activation" load=$content->module->ident file="details"}
+
+                <tr data-type="selection"{if $statistic.type == "selection"} class="bg-light"{/if}>
+                    <th>
+                        {$I18N["company.selection_cnt"]}
+                        <div class="text-muted">{$I18N["company.help.selection_cnt"]}</div>
+                    </th>
+                    <td>{$USER->relocation->selection_cnt}</td>
+                    <td>
+                        <a href="{$WWW_SCRIPT_DIR}{$WWW_ARGV}?type=selection">{$I18N["company.button.statistics.details"]}</a>
+                        <a href="{$WWW_HOME_DIR}download/partner/statistic/selection/">{$I18N["company.button.statistics.download"]}</a>
+                    </td>
+                </tr>
+                {symbl_module type="selection" load=$content->module->ident file="details"}
+
+                <tr data-type="shares"{if $statistic.type == "shares"} class="bg-light"{/if}>
+                    <th>
+                        {$I18N["company.shares_cnt"]}
+                        <div class="text-muted">{$I18N["company.help.shares_cnt"]}</div>
+                    </th>
+                    <td>{$USER->relocation->shares_cnt}</td>
+                    <td>
+                        <a href="{$WWW_SCRIPT_DIR}{$WWW_ARGV}?type=shares">{$I18N["company.button.statistics.details"]}</a>
+                        <a href="{$WWW_HOME_DIR}download/partner/statistic/shares/">{$I18N["company.button.statistics.download"]}</a>
+                    </td>
+                </tr>
+                {symbl_module type="shares" load=$content->module->ident file="details"}
+
+                <tr{if $statistic.type == "rating"} class="bg-light"{/if}>
+                    <th>
+                        {$I18N["company.rating.overview"]}
+                        <div class="text-muted">{$I18N["company.help.rating"]}</div>
+                    </th>
+                    <td>{$USER->relocation->rating_cnt} / {$USER->relocation->rating_avg} {$I18N["company.rating.stars"]}</td>
+                    <td>
+                        <a href="{$WWW_SCRIPT_DIR}{$WWW_ARGV}?type=rating">{$I18N["company.button.statistics.details"]}</a>
+                        <a href="{$WWW_HOME_DIR}download/partner/statistic/rating/">{$I18N["company.button.statistics.download"]}</a>
+                    </td>
+                </tr>
+                {symbl_module type="rating" load=$content->module->ident file="details"}
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+    {jquery}
+        {if !empty($statistic.type)}
+            $('html, body').animate({
+              scrollTop: ($('#{$statistic.type}').offset().top - 48 - 130)
+            }, 1000, "easeInOutExpo");
+        {/if}
+    {/jquery}
+
+    {*jquery}
+        $('[data-type]').on('click', function() {
+            var type = $(this).data('type');
+            $('#'+ type).load('{$WWW_SCRIPT_DIR}{$WWW_ARGV}?type=' + type + " #" + type + " > ", function(res) {
+                console.log('type', res);
+                $('#'+ type).show();
+            })
+        })
+    {/jquery*}
+
+    {/symbl_php_module}
+
+{else}
+    {$I18N["page.error.perm"]}
+{/if}

@@ -1,0 +1,193 @@
+{
+    "content": [
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Wir erheben, speichern und nutzen Ihre personenbezogenen Daten nach den Vorschriften der Datenschutzgesetze, insbesondere dem Bundesdatenschutzgesetz (BDSG) und dem Telemediengesetz (TMG). In dieser Erkl&auml;rung m&ouml;chten wir Sie dar&uuml;ber informieren, welche Arten von Daten wir zu welchen Zwecken verarbeiten und welche Rechte Ihnen zustehen.</p>\n\n<p>Sofern auf unserer Website die M&ouml;glichkeit der Eingabe pers&ouml;nlicher Daten besteht, machen wir Sie darauf aufmerksam, dass nur die besonders gekennzeichneten Pflichtfelder zur Bearbeitung der jeweiligen Anfrage oder Ihres Auftrags ben&ouml;tigt werden. Alle weiteren Angaben von Daten sind freiwillig und werden von uns zur Optimierung unseres Angebots und gegebenenfalls zu Statistikzwecken verwendet.</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a71 Anonymisierte Datenerhebung und -verarbeitung auf dieser Internetseite",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>In unserem Server werden automatisch Log-File-Daten erhoben und in einer internen Protokolldatei gespeichert, die &uuml;ber Ihren Browser an uns &uuml;bermittelt werden. Hierbei handelt es sich um folgende Daten:</p>\n\n<ul>\n\t<li>Typ und Version des von Ihnen verwendeten Browsers,</li>\n\t<li>Typ und Version des von Ihnen verwendeten Betriebssystems,</li>\n\t<li>URL der Seite, &uuml;ber die Sie zu uns gelangt sind,</li>\n\t<li>Suchworte, &uuml;ber die Sie unsere Seite gefunden haben,</li>\n\t<li>Datum und Uhrzeit des Abrufs unserer Website,</li>\n\t<li>Namen der von Ihnen abgerufenen Unterseiten.&nbsp;</li>\n</ul>\n\n<p>Diese Daten erheben und verarbeiten wir in anonymisierter Form, das hei&szlig;t: Sie k&ouml;nnen nicht einer bestimmten Person zugeordnet werden. Zweck der Datenerhebung und -verarbeitung ist die Auswertung zu internen systembezogenen und statistischen Zwecken.</p>\n\n<p>&nbsp;</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a72 Verwendung Ihrer Daten",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Wir nutzen Ihre E-Mail-Adresse, um einen Registrierungsvorgang auf unseren Seiten &uuml;ber eine Best&auml;tigungs-E-Mail abzuschlie&szlig;en und um Ihnen Best&auml;tigungs-E-Mails &uuml;ber die von Ihnen get&auml;tigten Bestellungen zukommen zu lassen.</p>\n\n<p>F&uuml;r die &Uuml;bermittlung unseres Newsletters oder anderer f&uuml;r Sie interessanter Angebote nutzen wir Ihre E-Mail-Adresse nur, wenn Sie uns Ihre Einwilligung dazu erteilt haben. Sie haben jederzeit die M&ouml;glichkeit, Ihre Einwilligung zu widerrufen und den Empfang von Newslettern und E-Mails unseres Unternehmens zu beenden. N&auml;heres zur Aus&uuml;bung Ihres Widerspruchsrechts finden Sie unter dem Punkt &bdquo;Widerspruchs- und Widerrufsrecht&ldquo;.</p>\n\n<p>Wir achten darauf, dass unser Angebot bestm&ouml;glich auf Ihre Bed&uuml;rfnisse abgestimmt ist. In diesem Zusammenhang m&ouml;chten wir Sie darauf hinweisen, dass wir</p>\n\n<ul>\n\t<li>Befragungen unserer registrierten Kunden durchf&uuml;hren, da wir stets an Ihrer Meinung &uuml;ber unser Produkt- und Dienstleistungsangebot interessiert sind</li>\n</ul>\n\n<p>Sie k&ouml;nnen einer entsprechenden Verwendung Ihrer Daten jederzeit durch eine kurze Mitteilung in Textform an die unten angegebenen Adressen widersprechen.</p>\n\n<p>Eine Weitergabe der Kundendaten an unbefugte Dritte findet nicht statt.</p>\n\n<p>&nbsp;</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a73 Cookies",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Wir verwenden f&uuml;r unsere Webseiten so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt und von Ihrem Browser gespeichert werden. Mit dem Setzen von Cookies kann unser Webserver Ihren Browser, Ihre individuellen Einstellungen in unseren Webseiten und gegebenenfalls Teile der Anmeldedaten in verschl&uuml;sselter Form erkennen, Ihnen auf diese Weise die Benutzung unserer Seiten erleichtern und ein automatisches Einloggen erm&ouml;glichen.</p>\n\n<p>&Uuml;ber Ihre Browsereinstellungen haben Sie die M&ouml;glichkeit, Cookies abzulehnen, Cookies von Ihrem Rechner zu l&ouml;schen, Cookies zu blockieren oder vor dem Setzen eines Cookies angefragt zu werden. Die von uns gesetzten Cookies werden nach jeder Sitzung wieder von Ihrem Rechner gel&ouml;scht.</p>\n\n<p>&nbsp;</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a74 Auskunftsrecht, Berichtigung, Sperrung und L\u00f6schung von Daten",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Wir erteilen Ihnen auf Anfrage jederzeit unentgeltlich Auskunft &uuml;ber die zu Ihrer Person gespeicherten Daten, &uuml;ber deren Herkunft, &uuml;ber die Empf&auml;nger sowie &uuml;ber den Zweck der Speicherung. Die Auskunft k&ouml;nnen Sie unter den unten benannten Kontaktdaten einholen.</p>\n\n<p>Bei Vorliegen der gesetzlichen Voraussetzungen haben Sie ein Recht auf Berichtigung, Sperrung oder L&ouml;schung dieser Daten. Wenden Sie sich auch hierzu bitte an die unten benannte Kontaktadresse.</p>\n\n<p>&nbsp;</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a75 Widerspruchs- und Widerrufsrecht",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Sie haben das Recht, der Nutzung Ihrer Daten f&uuml;r die Erstellung von Nutzungsprofilen zu widersprechen und eventuell an uns erteilte Einwilligungen zu widerrufen. In diesem Fall werden wir die Verarbeitung Ihrer Daten zu diesen Zwecken unterlassen. Den Widerspruch oder Widerruf k&ouml;nnen Sie formlos per Post, Telefax oder E-Mail ohne Angabe von Gr&uuml;nden an uns &uuml;bermitteln.</p>\n\n<address>SCALAN Internet solutions<br />\nAuf dem Rott 36<br />\n41564 Kaarst</address>\n\n<address>info@umzugskartons-app.de</address>\n\n<p>&nbsp;</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/headline",
+            "holder": {
+                "data": {
+                    "extra1": "3",
+                    "link": false
+                },
+                "lang": {
+                    "title": "\u00a76 Einwilligungserkl\u00e4rung",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        },
+        {
+            "module": "basic/text",
+            "holder": {
+                "data": {
+                    "link": false
+                },
+                "lang": {
+                    "content": "<p>Sofern Sie in die Nutzung Ihrer E-Mail-Adresse f&uuml;r den Empfang unseres Newsletters und die Zusendung von Angeboten eingewilligt haben, haben Sie uns gegen&uuml;ber die nachfolgende Einwilligungserkl&auml;rung abgegeben. Wir haben Ihre Einwilligungserkl&auml;rung protokolliert.</p>\n\n<p>Einwilligung zur Nutzung meiner E-Mail-Adresse zum Emfpangen von Newslettern und Angeboten.</p>",
+                    "is_translated": "1",
+                    "is_active": "1"
+                }
+            },
+            "subdata": []
+        }
+    ],
+    "filelist": []
+}

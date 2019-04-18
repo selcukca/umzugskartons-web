@@ -1,0 +1,16 @@
+{
+    "filelist": [
+        {
+            "url": "http://localhost/symbl/www.umzugskartons-app.de/symbl/media/app/language/de.json",
+            "local": "language/de.json",
+            "size": 1659,
+            "hash": "de0e323a58adc84e0ba3d9f1c45d1816"
+        },
+        {
+            "url": "http://localhost/symbl/www.umzugskartons-app.de/symbl/media/app/language/en.json",
+            "local": "language/en.json",
+            "size": 1530,
+            "hash": "1851049aeaaf124955834ac6dcdd979e"
+        }
+    ]
+}

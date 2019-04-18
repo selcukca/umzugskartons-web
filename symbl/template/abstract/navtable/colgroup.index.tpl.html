@@ -1,0 +1,14 @@
+
+<colgroup>
+{foreach from=$navtable.query.columns item=column}
+
+    {strip}
+    {if $navtable.field.$column.visible}
+
+        <col id="{$navtable.field.$column.title}"{if $navtable.field.$column.width} style="width:{$navtable.field.$column.width}px;"{/if} />
+
+    {/if}
+    {/strip}
+
+{/foreach}
+</colgroup>

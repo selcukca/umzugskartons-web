@@ -1,0 +1,10 @@
+{if $holder && $holder->lang->is_active && $holder->lang->title}
+
+
+    <div class="feature-item" {if $carouselId = $parent->getConfig()->getCarouselId($holder->data->extra2)} data-target="{$carouselId}" data-slide-to="{$holder->data->extra2|default:$idx}"{/if}>
+        <i class="{$holder->data->extra1|default:"icon-eye text-primary"}"></i>
+        <h3>{$holder->lang->title}</h3>
+        <p>{$holder->lang->content}</p>
+    </div>
+
+{/if}

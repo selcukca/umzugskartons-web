@@ -1,0 +1,19 @@
+{if $holder && $holder->lang->is_active && $holder->lang->title}
+
+
+    {if $holder->data->extra2}<div class="section-heading text-center">{/if}
+
+    <h{$holder->data->extra1|default:"1"}>
+        {$holder->lang->title}
+    </h{$holder->data->extra1|default:"1"}>
+    {if !empty($holder->lang->teaser)}
+        <h4>{$holder->lang->teaser}</h4>
+    {/if}
+
+    {$holder->data->extra3}
+
+    {if $holder->data->extra2}</div>{/if}
+
+
+
+{/if}

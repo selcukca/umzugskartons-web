@@ -1,0 +1,129 @@
+{*if isset($PAGE.carousel)}
+    <div>
+        {symbl_module load=$PAGE.carousel->module->ident content=$PAGE.carousel holder=$PAGE.carousel->holder}
+    </div>
+{/if*}
+
+
+{foreach from=$PAGE.module item=content}
+    {symbl_module load=$content->module->ident content=$content holder=$content->holder}
+{/foreach}
+
+{*
+
+<section class="download bg-tertiary text-center" id="download">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <h2 class="section-heading">Weil Dein Smartphone immer dabei ist, wenn Du umziehst.</h2>
+        <h4 class="mb-4">Kostenlos in den folgenden Stores erhältlich:</h4>
+        <div class="badges">
+          <a class="badge-link" href="#"><img src="{$WWW_IMAGE_DIR}test/img/google-play-badge.svg" alt=""></a>
+          <a class="badge-link" href="#"><img src="{$WWW_IMAGE_DIR}test/img/app-store-badge.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2>«Ciao» zum Umzugs-Chaos</h2>
+      <h4>Das kann Umzugskartons:</h4>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 my-auto">
+        <div class="device-container">
+          <div class="device-mockup iphone6_plus portrait white">
+            <div class="device">
+              <div class="screen">
+                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                <img src="{$WWW_IMAGE_DIR}test/img/devices/02.png" class="img-fluid" alt="">
+              </div>
+              <div class="button">
+                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 my-auto">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="icon-eye text-primary"></i>
+                <h3>Inventar</h3>
+                <p class="">Behalte den Überblick! Benenne und fülle Deine Kartons. Du findest  alles wieder - Schneller als du je gedacht hast.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="icon-organization text-primary"></i>
+                <h3>Räume</h3>
+                <p class="">Sehr schöne Wohnung! Lege deine neuen Räume in der App an und weise die Kartons zu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="icon-printer text-primary"></i>
+                <h3>Druck</h3>
+                <p class="">Druck Dir eine Liste mit allen Inhalten und gib jedem Deiner Helfer einen Plan in die Hand.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="icon-pencil text-primary"></i>
+                <h3>Beschriftung</h3>
+                <p class="">Inhalt zerbrechlich? Steht drauf! Erstelle druckbare Labels für jeden Karton.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-content">
+    <div class="container">
+      <h2>Dein Umzug sollte Spaß machen. Wir helfen Dir.</h2>
+      <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">LOS GEHT ES!</a>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</section>
+
+<section class="contact bg-primary" id="contact">
+  <div class="container">
+    <h2><i class="fa fa-heart"></i> Gefällt Dir die App?</h2>
+    <h3 class="mb-4">Wir freuen uns sehr über einen Share:</h3>
+    <ul class="list-inline list-social">
+      <li class="list-inline-item social-twitter">
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item social-facebook">
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li class="list-inline-item social-google-plus">
+        <a href="#">
+          <i class="fa fa-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+*}
+
+{symbl_module load="footer"}
+

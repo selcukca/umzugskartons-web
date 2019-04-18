@@ -1,0 +1,29 @@
+{if $holder->hasMedia()}
+
+    <div class="col-md-{if $holder->data->extra3 == "small"}3{elseif $holder->data->extra3 == "medium"}4{else}6{/if}">
+
+        {if $holder->data->linkto->isLink()}
+
+            {symbl_link linkto=$holder->data->linkto}
+                {symbl_image class="img-responsive" media=$holder->media size=$holder->data->extra3|default:"small"}
+            {/symbl_link}
+
+        {else}
+
+            {symbl_link media=$holder->media class="mediafile"}
+                {symbl_image class="img-responsive" media=$holder->media size=$holder->data->extra3|default:"small"}
+            {/symbl_link}
+
+        {/if}
+
+
+        {if $content->module->config->isField('lang[mediafile_legend]')}
+        <div class="mediainfo">
+            {$holder->lang->mediafile_legend}
+            {$holder->data->mediafile_copyright}
+        </div>
+        {/if}
+
+    </div>
+
+{/if}

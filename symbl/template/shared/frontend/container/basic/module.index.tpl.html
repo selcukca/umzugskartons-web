@@ -1,0 +1,6 @@
+{if $relation->content}
+
+    {symbl_container load="`$relation->container->ident`/`$relation->content->module->ident`" content=$relation->content holder=$relation->content->holder}
+
+
+{/if}

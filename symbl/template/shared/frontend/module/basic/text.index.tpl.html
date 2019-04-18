@@ -1,0 +1,9 @@
+{if $holder && $holder->lang->is_active && $holder->lang->content}
+
+    {if $holder->data->extra1}
+        {eval var=$holder->lang->content}
+    {else}
+        {$holder->lang->content}
+    {/if}
+
+{/if}

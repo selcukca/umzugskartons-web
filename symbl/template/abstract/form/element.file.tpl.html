@@ -1,0 +1,44 @@
+
+{if !isset($error)}
+    {$error = $form.$element.error}
+{/if}
+
+
+
+<div class="form-group{if isset($formGroupClass)} {$formGroupClass}{/if}{if $error} has-error{/if}">
+
+    {if !empty($label)}
+        <label>
+            {if $label ===true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$label}
+            {/if}
+            {if $form.$element.required} {$I18N->required}{/if}
+        </label>
+    {/if}
+
+
+    <span class="btn btn-success btn-sm fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>{$I18N->btn_select_file}</span>
+
+        {qf form=$form element=$element class="fileupload" data-url="`$url`"}
+
+    </span>
+
+
+
+    {if !empty($help)}
+        <div><small class="text-muted">{$help}</small></div>
+    {/if}
+
+
+    {if $error}
+        <span class="help-block error">{$I18N->get($error, $error)}</span>
+    {/if}
+
+</div>
+
+
+

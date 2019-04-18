@@ -1,0 +1,47 @@
+{symbl_module load="scalan/umzugskartons/profile/overview" file="navigation"}
+
+
+{symbl_php_module load=$content->module->ident screen=[$content->module->ident, "scalan/umzugskartons/order", "form/abstract"]}
+
+
+
+     <form{$form.attributes}>
+            {$form.hidden}
+
+            {if $form.errors || $form.error}
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  {$I18N->f_error}
+                  {if $form.error}
+                    <br />
+                    <br />
+                    <div>{$form.error}</div>
+                  {/if}
+                </div>
+            {/if}
+
+            <h3 class="page-header">{$I18N["partner.profile.account.section.user"]}</h3>
+            {symbl_element form=$form element=usr label="account.usr" help=$I18N["account.help.usr"]}
+            {symbl_element form=$form element=email label="account.email" help=$I18N["account.help.email"]}
+
+            <h3 class="pt-5">{$I18N["partner.profile.account.section.pwd"]}</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    {symbl_element form=$form element=pwd1 label="account.pwd1" help=$I18N["account.help.pwd1"]}
+                </div>
+                <div class="col-md-6">
+                    {symbl_element form=$form element=pwd2 label="account.pwd2"}
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <div class="pull-right">
+                    {symbl_element form=$form element=btn_submit class="btn btn-lg btn-primary" label="account.button.save"}
+                </div>
+            </div>
+
+
+
+        </form>
+
+{/symbl_php_module}

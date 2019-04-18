@@ -1,0 +1,25 @@
+{if $content->tb == "TB_DATA"}
+{if $holder && $holder->lang->is_active}
+
+<div class="mod">
+    <div class="row">
+
+        {if $holder->data->extra1 == "left"}
+
+            {symbl_module load=$content->module->ident file="image"}
+            {symbl_module load=$content->module->ident file="text"}
+
+
+        {else}
+
+            {symbl_module load=$content->module->ident file="text"}
+            {symbl_module load=$content->module->ident file="image"}
+
+
+        {/if}
+
+    </div>
+</div>
+
+{/if}
+{/if}

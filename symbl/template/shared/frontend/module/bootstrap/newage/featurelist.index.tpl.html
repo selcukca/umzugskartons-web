@@ -1,0 +1,20 @@
+<div class="container-fluid">
+
+
+    {$idx = 0}
+    {foreach from=$content->subdata->getWithHolder()->filter("data", "id", ">", 0)->chunk($content->getConfig()->getCols()) item=chunks}
+
+        <div class="row">
+            {foreach from=$chunks item=subcontent}
+                <div class="{$content->getConfig()->getColClass()}">
+                    {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content idx=$idx}
+                </div>
+                {$idx = $idx+1}
+            {/foreach}
+        </div>
+
+
+    {/foreach}
+
+
+</div>

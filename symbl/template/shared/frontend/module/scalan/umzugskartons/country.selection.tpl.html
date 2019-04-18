@@ -1,0 +1,28 @@
+{if !$AUTH->getAuth()}
+    <div class="clearfix">
+
+        <div class="pull-right form-group">
+            <label for="countrySelect">Standort</label>
+            <select name="fk_country" class="form-control chosen-select" >
+                {foreach from=$COUNTRIES->getAvailables() item=country}
+                    <option{if $USER->relocation->country->id == $country->data->id} selected{/if} value="{$country->data->id}">{$country->lang->title}</option>
+                {/foreach}
+            </select>
+        </div>
+
+    </div>
+
+    {jquery}
+        $('select[name="fk_country"]').on('change', function() {
+            {if !empty($elementId)}
+                $('#{$elementId}').css({ opacity: 0.5 });
+                $('#{$elementId}').load('{$WWW_SCRIPT_DIR}{$WWW_ARGV}?fk_country=' + $(this).val() + " #{$elementId}", function(result) {
+                    $('#{$elementId}').css({ opacity: 1 });
+                });
+            {else}
+                document.location.href= '?fk_country=' + $(this).val();
+            {/if}
+
+        })
+    {/jquery}
+{/if}

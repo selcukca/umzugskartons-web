@@ -1,0 +1,25 @@
+
+<form{$form.attributes}>
+    {$form.hidden}
+
+    <div class="row">
+        <div class="col-md-8">
+            {symbl_element form=$form element=email    label=true}
+        </div>
+        <div class="col-md-4">
+            {symbl_element form=$form element=hash     label=true}
+        </div>
+    </div>
+
+
+
+    <div class="clearfix">
+        <div class="pull-right">
+            {qf form=$form element=btn_submit class="btn btn-lg btn-primary" value=$I18N->btn_submit}
+        </div>
+    </div>
+
+
+
+</form>
+

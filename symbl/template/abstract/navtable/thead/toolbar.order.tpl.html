@@ -1,0 +1,8 @@
+
+{if isset($navtable.form.order_extended) && $navtable.form.order_extended|@count > 2 && !$show_order_extended}
+
+<div class="btn-group">
+    <button class="btn btn-info" onclick="Symbl.Navtable.toggle('{$navtable_id}navtable-order-row');return false;"><i class="icon-text-height icon-white"></i></button>
+</div>
+
+{/if}

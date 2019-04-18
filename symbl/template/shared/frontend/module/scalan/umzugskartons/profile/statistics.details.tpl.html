@@ -1,0 +1,58 @@
+<tr id="{$type}"{if $statistic.type != $type} style="display:none;"{/if}>
+    <td colspan="4" class="pl-5">
+
+        <div class="alert alert-info">
+            {$I18N["statistic.message.limiting"]}
+        </div>
+
+        {if ($statistic.type == $type) && isset($statistic.list)}
+        <table class="table">
+            <colgroup>
+                <col width="150" />
+                {if $statistic.type == "rating"}
+                    <col />
+                    <col />
+                {else if $statistic.type == "activation"}
+                    <col />
+                {/if}
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <thead>
+                <tr>
+                    <td>{$I18N["statistic.column.date"]}</td>
+                    {if $statistic.type == "rating"}
+                        <td>{$I18N["statistic.column.rating.stars"]}</td>
+                        <td>{$I18N["statistic.column.rating.message"]}</td>
+                    {else if $statistic.type == "activation"}
+                        <td>{$I18N["statistic.column.activation.code"]}</td>
+                    {/if}
+                    <td>{$I18N["statistic.column.platform"]}</td>
+                    <td>{$I18N["statistic.column.version"]}</td>
+                    <td>{$I18N["statistic.column.type"]}</td>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach from=$statistic.list item=relation}
+                <tr>
+                    <td>{$relation->created|date:$I18N} <small>{$relation->created|time:$I18N}</small></td>
+                    {if $statistic.type == "rating"}
+                        <td>{$relation->stars}</td>
+                        <td>{$relation->message|strip_tags|default:"-"}</td>
+                    {else if $statistic.type == "activation"}
+                        <td>{$relation->code}</td>
+                    {/if}
+
+                    <td>{$relation->device_platform|default:"-"}</td>
+                    <td>{$relation->device_version|default:"-"}</td>
+                    <td>{$relation->device_type|default:"-"}</td>
+                </tr>
+                {/foreach}
+            </tbody>
+        </table>
+        {/if}
+
+
+    </td>
+</tr>

@@ -1,0 +1,18 @@
+{if !isset($chosen) || ($chosen)}
+    {$class = "chosen-select form-control"}
+{else}
+    {$class = "form-control"}
+{/if}
+
+{if $form.$element.error}
+    {$class = "{$class} is-invalid"}
+{/if}
+
+{if !isset($attributes)}
+    {$attributes = []}
+{/if}
+{$attributes['class'] = $class}
+{$attributes['data-placeholder'] = $placeholder|default:$I18N["selectbox.option.choose"]}
+
+
+{symbl_include load="abstract/form/element" file="standard" attributes=$attributes}

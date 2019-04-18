@@ -1,0 +1,50 @@
+
+{if !isset($error)}
+    {$error = $form.$element.error}
+{/if}
+
+
+<div class="form-group{if isset($formGroupClass)} {$formGroupClass}{/if}{if $error} is-invalid{/if}">
+
+    {if !empty($label)}
+        <label for="{$form.$element.id}">
+
+            {if $label === true}
+                {$I18N[$form.$element.name]}
+            {else}
+                {$I18N->get($label, $label)}
+            {/if}
+            {if $form.$element.required} {$I18N['element.required']}{/if}
+
+        </label>
+    {/if}
+
+
+    {if isset($prefix) || isset($suffix)}
+        <div class="input-group">
+
+            {if isset($prefix)}<span class="input-group-addon">{$prefix}</span>{/if}
+
+            {qf form=$form element=$element class="form-control{if $error} is-invalid{/if}" attributes=$attributes|default:null}
+
+            {if isset($suffix)}<span class="input-group-addon">{$suffix}</span>{/if}
+
+        </div>
+    {else}
+
+        {qf form=$form element=$element class="form-control{if $error} is-invalid{/if}" attributes=$attributes|default:null}
+
+    {/if}
+
+
+
+    {if !empty($help)}
+        <small class="text-muted">{$help}</small>
+    {/if}
+
+
+    {if $error}
+        <div class="invalid-feedback">{$I18N->get($error, $error)}</div>
+    {/if}
+
+</div>

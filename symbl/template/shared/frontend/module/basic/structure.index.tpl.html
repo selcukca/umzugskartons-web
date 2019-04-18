@@ -1,0 +1,18 @@
+
+
+
+{if $content->extra1 && $STRUCTURE[$content->extra1]}
+
+    <ul class="nav">
+    {foreach from=$STRUCTURE[$content->extra1]->childs item=oStructure}
+
+        <li{if ($oStructure->isRoute($ROUTE) || $oStructure->isInRouteWay($ROUTE))} class="active"{/if}>
+            {symbl_link linkto=$oStructure->linkto}{$oStructure->lang->title}{/symbl_link}
+        </li>
+
+
+    {/foreach}
+    </ul>
+
+
+{/if}

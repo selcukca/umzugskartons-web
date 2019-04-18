@@ -1,0 +1,17 @@
+
+<header class="masthead masthead-half">
+
+    <div class="container h-100">
+
+        <h1>
+            {symbl_image media=$oPartner->media size="50x50x0"}
+            {$oPartner->title}
+            {if $oPartner->package}
+                <small class="float-right">{$oPartner->package|upper}</small>
+            {/if}
+        </h1>
+
+        <h4>{$oPartner->zip} {$oPartner->city}, {$oPartner->country->title}</h4>
+    </div>
+
+</header>

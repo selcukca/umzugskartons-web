@@ -1,0 +1,11 @@
+
+{if !empty($label)}
+    {if $label === true}
+        {$label = $I18N[$form.$element.name]}
+    {else}
+        {$label = $I18N->get($label, $label)}
+    {/if}
+{/if}
+
+
+{qf form=$form element=$element class="{$class|default:"btn btn-default"}" value=$label}

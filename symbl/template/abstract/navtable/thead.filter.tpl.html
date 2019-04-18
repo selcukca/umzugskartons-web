@@ -1,0 +1,29 @@
+
+    {if $navtable.filter|@count > 0}
+
+    <tr data-navtable-row="filter" style="display:{if $navtable.query.is_filtered || $show_filter}show{else}none{/if};">
+        {foreach from=$navtable.query.columns item=column}
+
+        {if $navtable.field.$column.visible}
+
+            <td>
+                {navtable_include path=$prefix load="thead.filter.td" file=$column}
+                {if isset($navtable.filter.$column)}
+
+                    {foreach from=$navtable.filter.$column.elements key=index item=aF}
+
+                        {qf form=$form.navtable.filter.$column element=$index class="form-control"}
+
+                    {/foreach}
+
+                {else}
+                    &nbsp;
+                {/if}
+                {/navtable_include}
+
+            </td>
+        {/if}
+        {/foreach}
+    </tr>
+
+    {/if}

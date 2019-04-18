@@ -1,0 +1,40 @@
+{if $holder && $holder->lang->is_active}
+
+    <section class="pic-text pic-text-right">
+        <div class="container">
+
+            <div class="row">
+
+                {if $holder->data->extra1 == "left"}
+
+                    {symbl_module load="basic/imagetext" file="image"}
+                    {symbl_module load="basic/imagetext" file="text"}
+
+
+                {else}
+
+                    {symbl_module load="basic/imagetext" file="text"}
+                    {symbl_module load="basic/imagetext" file="image"}
+
+
+                {/if}
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    {foreach from=$content->subdata item=subcontent}
+
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+
+
+    {/foreach}
+
+
+
+
+{/if}

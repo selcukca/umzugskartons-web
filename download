@@ -1,0 +1,1 @@
+<?php include("symbl/" . basename(__FILE__) . ".php");

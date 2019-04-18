@@ -1,0 +1,15 @@
+
+{if $oPackage}
+    {if $USER->relocation->country->fk_status != $STATUS_ONLINE}
+        {$I18N["basket.msg.country_not_implemented"]}
+    {/if}
+
+    {symbl_module load="scalan/umzugskartons/basket" file="overview"}
+
+
+{else}
+    {$I18N["basket.msg.empty"]}
+{/if}
+
+
+

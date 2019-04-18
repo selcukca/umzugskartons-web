@@ -1,0 +1,147 @@
+
+<table class="table">
+    {if $showColgroup}
+    <colgroup>
+        <col />
+        <col width="200" />
+        <col width="200" />
+        <col width="200" />
+    </colgroup>
+    {/if}
+    <thead>
+        <tr>
+            <th>{$I18N["basket.product"]}</th>
+            <th class="text-center">{$I18N["basket.quantity"]}</th>
+            <th class="text-right">{$I18N["basket.price.unit"]} ({$USER->relocation->country->currency|default:"EUR"})</th>
+            <th class="text-right">{$I18N["basket.price.total"]} ({$USER->relocation->country->currency|default:"EUR"})</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                <strong>{$oPackage->lang->title} {$I18N["package.title"]}</strong><br />
+                {if $basket.unit.additional && !$oPackage->data->isFree($USER->relocation->country)}
+                    {$I18N["basket.additional"]} {$basket.unit.additional}% {$I18N->per_month}<br/
+                {/if}
+            </td>
+            <td class="text-center">
+                {$basket.quantity}
+            </td>
+            <td class="text-right">
+                {($basket.unit.netto/100)|currency}
+            </td>
+            <td class="text-right">
+                {($basket.amount.netto/100)|currency}
+
+            </td>
+        </tr>
+        {if $showElement}
+        <tr>
+            <td colspan="4">
+                <div class="alert alert-warning clearfix" role="alert">
+                    {symbl_element form=$form element=code label=$I18N["package[code]"] help=$I18N["package[code][desc]"]}
+                    <div class="pull-right">
+                        {qf form=$form element=btn_code class="btn btn-secondary" value=$I18N["basket.button.code"]}
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        {jquery}
+            $('input[name="code"').keypress(function (e) {
+
+                if (e.which == 13) {
+                    $('input[type="submit"][name="btn_code"]').trigger('click');
+                    e.preventDefault();
+                }
+            });
+        {/jquery}
+        {/if}
+
+        {if $basket.free_months}
+        <tr>
+            <td><strong>{$oPackage->lang->title} {$I18N["package.title"]}</strong>, {$I18N->free_months}</td>
+            <td class="text-center">{$basket.free_months}</td>
+            <td class="text-right" >{"0"|currency}</td>
+            <td class="text-right" >{"0"|currency}</td>
+        </tr>
+        {/if}
+    </tbody>
+
+    <tfoot>
+
+
+        {if $USER->relocation->country->tax > 0}
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <th class="text-right">{$USER->relocation->country->tax|currency} {$I18N["basket[mwst]"]}</th>
+            <th class="text-right">{($basket.amount.tax/100)|currency}</th>
+        </tr>
+        {/if}
+
+        <tr style="font-size:100%">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <th class="text-right">
+                {if $basket.discount.unit}
+                    {$I18N["basket.amount.total.sum"]}
+                {else}
+                    {$I18N["basket.amount.total.full"]}
+                {/if}
+
+                <br /><small>
+                {if $USER->relocation->country->tax > 0}
+                    {$I18N["basket.tax.included"]}
+                {else}
+                    {$I18N["basket.tax.excluded"]}
+                {/if}
+                </small>
+            </th>
+            <th class="text-right">{($basket.amount.brutto/100)|currency}</th>
+        </tr>
+
+        {if $basket.discount.unit}
+            <tr>
+                <td>
+                    <strong>{$I18N["basket.discount"]}</strong>,
+                    {if $BASKET.COUPON->discount_type == "percent"}
+                        {$BASKET.COUPON->discount|currency} % {$I18N["per_month"]}
+                    {elseif $BASKET.COUPON->discount_type == "fixed"}
+                        {($basket.discount.total/100)|currency}
+                    {/if}
+                </td>
+                <td class="text-center">&nbsp;</td>
+                <td class="text-right" >&nbsp;</td>
+                <td class="text-right" >-{($basket.discount.total/100)|currency}</td>
+            </tr>
+
+
+            <tr style="font-size:120%">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <th class="text-right">
+                    {$I18N["basket.amount.total.full"]}
+                    <br />
+                    <small>
+                    {if $USER->relocation->country->tax > 0}
+                        {$I18N["basket.tax.included"]}
+                    {else}
+                        {$I18N["basket.tax.excluded"]}
+                    {/if}
+                    </small>
+                </th>
+                <th class="text-right">
+                    {($basket.total.brutto/100)|currency}
+
+                    {if $USER->relocation->country->tax > 0}
+                    <br /><small>({($basket.total.tax/100)|currency})</small>
+                    {/if}
+                </th>
+            </tr>
+        {/if}
+    </tfoot>
+
+</table>
+

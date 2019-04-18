@@ -1,0 +1,22 @@
+{symbl_php_module load="scalan/umzugskartons/registration" file="short" screen=["scalan/umzugskartons/profile"]}
+
+    <form{$form.attributes}>
+        {$form.hidden}
+
+        {symbl_element form=$form element=title label="company.title"}
+
+        {symbl_element form=$form element=email label="company.email"}
+
+        {symbl_element form=$form element=identity label="company.identity" help=$I18N["company.help.identity"]}
+
+
+        <div class="clearfix">
+            <div class="pull-right">
+                {qf form=$form element=btn_submit class="btn btn-primary" value=$I18N->btn_next}
+            </div>
+        </div>
+    </form>
+
+
+
+{/symbl_php_module}

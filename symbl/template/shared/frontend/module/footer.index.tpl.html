@@ -1,0 +1,25 @@
+{if $URL_VIEW_VALUE == 0}
+
+
+    <footer>
+      <div class="container">
+        <p>{$SETTING.PAGE_FOOTER}</p>
+        <ul class="list-inline">
+            {foreach from=$STRUCTURE["META_NAVIGATION"]->childs->getVisibles() item=oStructure}
+
+
+                <li class="list-inline-item{if ($oStructure->isRoute($ROUTE) || $oStructure->isInRouteWay($ROUTE))} active{/if}">
+
+                    {symbl_link linkto=$oStructure->linkto}
+                        {$oStructure->lang->shorttitle|default:$oStructure->lang->title}
+                    {/symbl_link}
+
+                </li>
+
+            {/foreach}
+
+        </ul>
+      </div>
+    </footer>
+
+{/if}

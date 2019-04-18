@@ -1,0 +1,41 @@
+
+
+<div class="table-responsive">
+
+    <table data-navtable="{$navtable.id}" class="table table-navtable table-hover table-striped table-condensed" width="{$navtable.query.width}" style="width:{$navtable.query.width}px;">
+
+        {symbl_include load="abstract/navtable/colgroup"}
+
+        {symbl_include load="abstract/navtable/thead"}
+        {symbl_include load="abstract/navtable/tbody"}
+        {symbl_include load="abstract/navtable/tfoot"}
+
+    </table>
+
+</div>
+
+{pagedata type="jquery"}
+
+    Symbl.Navtable.init('{$navtable.id}', '{$form.formularname}', {$navtable.jsdata|json_encode})
+
+
+    Symbl.Navtable.registerCallback('{$navtable.id}', function(form)
+    {
+
+        $(form).ajaxSubmit({
+
+            success: function(response, status, xhr, jq) {
+
+                var navtable = 'table[data-navtable="{$navtable.id}"]';
+
+                $(navtable).html( $(navtable, response).html() );
+
+                Symbl.Navtable.reinit('{$navtable.id}');
+            }
+
+        });
+
+
+    });
+
+{/pagedata}

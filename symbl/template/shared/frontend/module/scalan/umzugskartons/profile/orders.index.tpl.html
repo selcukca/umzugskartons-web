@@ -1,0 +1,127 @@
+
+{symbl_module load="scalan/umzugskartons/profile/overview" file="navigation"}
+
+{symbl_php_module load=$content->module->ident screen=[$content->module->ident, "scalan/umzugskartons/order", "scalan/umzugskartons/basket", "form/abstract"]}
+
+
+    {$hasPremium = $USER->relocation->orders->has('premium')}
+
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th>{$I18N["invoice.ident"]}</th>
+                <th>{$I18N["activation.code"]}</th>
+                <th>{$I18N["activation.package"]}</th>
+                <th>{$I18N["activation.valid_from"]}</th>
+                <th>{$I18N["activation.valid_until"]}</th>
+                <th>{$I18N["activation.cnt_activations"]}</th>
+                <th>{$I18N["activation.fk_status"]}</th>
+                <th>&nbsp;</th>
+            </thead>
+            <tbody>
+                {foreach from=$orderlist item=oActivation}
+                <tr{if isset($orders, $orders[$oActivation->id])} class="bg-light"{/if}>
+                    <td>
+                        {if $oActivation->invoice->klarna_order_id}
+                            <a href="?details={$oActivation->invoice->ident}">
+                                {$oActivation->invoice->ident|default:"-"}
+                            </a>
+                        {else}
+                            -
+                        {/if}
+                    </td>
+                    <td>{$oActivation->ident}</td>
+                    <td>{$oActivation->invoice->package->lang->title}</td>
+                    <td>{$oActivation->valid_from|date:$I18N}</td>
+                    <td>{$oActivation->valid_until|date:$I18N}</td>
+                    <td>
+                        {if $hasPremium && ($oActivation->activation_cnt > 0)}
+                            <a href="{$STRUCTURE[43]->linkto->getUrl()}?type=activation">{$oActivation->activation_cnt}</a>
+                        {else}
+                            {$oActivation->activation_cnt}
+                        {/if}
+
+                    </td>
+                    <td>
+                        {$I18N->getStatus($oActivation->fk_status, "activation.")}
+                    </td>
+                    <td>
+                        <a target="_blank" href="{$WWW_HOME_DIR}download/flyer/{$oActivation->ident}/">{$I18N["activation.button.flyer"]}</a>
+                        {if !$oActivation->invoice->package->isFree($USER->relocation->country)}
+                            {*<a href="{$oActivation->getPdfFile()->getDownloadUrl()}">{$I18N["order[btn_pdf]"]}</a>*}
+                        {/if}
+                    </td>
+                </tr>
+                {if isset($orders, $orders[$oActivation->id])}
+                    <tr>
+                        <td colspan="8" class="p-5">
+
+                            {$klarna = $orders[$oActivation->id]}
+                            <strong>{$I18N["klarna.klarna_reference"]}</strong> {$klarna.klarna_reference}<br />
+                            <br />
+
+                            <strong>{$I18N["klarna.billing_address"]}</strong><br />
+                            {$klarna.billing_address.title} {$klarna.billing_address.given_name} {$klarna.billing_address.family_name}<br />
+                            {$klarna.billing_address.street_address}<br />
+                            {$klarna.billing_address.street_address2}<br />
+                            {$klarna.billing_address.postal_code} {$klarna.billing_address.city}, {$klarna.billing_address.country}  <br />
+                            <br />
+                            <strong>{$I18N["klarna.order_lines"]}</strong><br />
+                            <table>
+                                <tbody>
+                                {foreach from=$klarna.order_lines item=line}
+                                    <tr>
+                                        <td>{$line.name}</td>
+                                        <td class="text-right">{($line.quantity * $line.unit_price / 100)|currency} {$klarna.purchase_currency}</td>
+                                    </tr>
+
+                                    {if $line.total_discount_amount}
+                                    <tr>
+                                        <td>{$I18N["basket.discount"]}</td>
+                                        <td class="text-right">-{($line.total_discount_amount / 100)|currency} {$klarna.purchase_currency}</td>
+                                    </tr>
+                                    {/if}
+                                {/foreach}
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>
+                                            {$I18N["basket.amount.total.full"]}
+                                        </th>
+                                        <th class="text-right">{($klarna.original_order_amount/100)|currency} {$klarna.purchase_currency}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <small>{$I18N["basket.tax.included"]}</small>
+                                        </td>
+                                        <td class="text-right">
+                                            <small>{($line.total_tax_amount/100)|currency} {$klarna.purchase_currency}</small>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <br />
+
+
+                            <br />
+
+                            <strong>{$I18N["klarna.initial_payment_method"]}</strong>
+                            {$klarna.initial_payment_method.type}, {$klarna.initial_payment_method.description}
+
+                            {*$klarna|vardump*}
+                        </td>
+                    </tr>
+                {/if}
+                {foreachelse}
+                    <tr>
+                        <td colspan="8">{$I18N["partner.profile.orders.empty"]}</td>
+                    </tr>
+                {/foreach}
+
+            </tbody>
+        </table>
+    </div>
+
+
+{/symbl_php_module}

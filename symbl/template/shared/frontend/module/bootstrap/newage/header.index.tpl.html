@@ -1,0 +1,22 @@
+
+<header class="masthead{if !$content->getConfig()->isFullscreen()} {$content->getConfig()->getClass()|default:"masthead-half"}{/if}">
+
+
+    {if $content->getConfig()->hasContainer()}
+        <div class="container h-100">
+    {/if}
+
+
+    {foreach from=$content->subdata item=subcontent}
+
+        {symbl_module load=$subcontent->module->ident content=$subcontent holder=$subcontent->holder parent=$content}
+
+    {/foreach}
+
+
+    {if $content->getConfig()->hasContainer()}
+        </div>
+    {/if}
+
+
+</header>

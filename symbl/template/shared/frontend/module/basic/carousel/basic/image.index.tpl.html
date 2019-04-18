@@ -1,0 +1,16 @@
+
+{if $holder && ($holder->data->media->isFile() || $holder->lang->media->isFile())}
+
+
+    {if $holder->lang->media->isFile()}
+        {symbl_link media=$holder->lang->media class="fancybox" rel="gallery-`$parent->id`"}
+            {symbl_image media=$holder->lang->media size=$holder->data->extra3|default:"original"}
+        {/symbl_link}
+    {else}
+        {symbl_link media=$holder->data->media  rel="gallery-`$parent->id`" class="fancybox img-thumbnail" }
+            {symbl_image media=$holder->data->media size=$holder->data->extra3|default:"original"}
+        {/symbl_link}
+    {/if}
+
+
+{/if}
